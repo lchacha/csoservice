@@ -72,9 +72,9 @@ app.get('/forms', function(req, res, next){
 	res.sendfile("./views/production/form.html")
 });
 
-app.get('/contactcsos', function(req, res, next){
+app.get('/addperson', function(req, res, next){
 	
-	res.sendfile("./views/production/contactcsos.html")
+	res.sendfile("./views/production/addpersons.html")
 });
 
 //Template for adding a html page
