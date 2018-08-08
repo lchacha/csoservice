@@ -62,5 +62,5 @@ app.get('/', function(req, res, next){
 
 
 // Start the server running on port 80
-server.listen(3000, IPADDRESS);
+server.listen(PORT, IPADDRESS);
 
