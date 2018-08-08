@@ -38,7 +38,7 @@
   ],
   "author": "Lenah Chacha, Silas kamanza",
   "license": "ISC",
-  "engines"; {
+  "engines": {
      "node": "6.x.x"
   }
 }
