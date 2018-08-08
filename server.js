@@ -5,7 +5,7 @@
 //Email: lenah.chacha@gmail.com
 ///////////////////////////////////////////////////////////////
 
-
+/*    DO NOT TOUCH */
 // VAriable declaration
 var express = require('express');
 
@@ -48,18 +48,43 @@ app.use(function(err, req, res, next) {
     console.log("error  : ",err);
 });
 
-
+/* DO NOT TOUCH ABOVE THIS */
 
 // Route for the main page 
-
 app.get('/', function(req, res, next){
 	
 	res.sendfile("./views/production/index.html")
 });
 
+app.get('/tables', function(req, res, next){
+	
+	res.sendfile("./views/production/tables.html")
+});
 
-// Start the server running on port 80
+
+app.get('/tabledynamics', function(req, res, next){
+	
+	res.sendfile("./views/production/tables_dynamic.html")
+});
+//Template for adding a html page
+
+//  app.get('/the_name_of_the_page', function(req,re,next){
+//      	res.sednfile("./views/production/the_name_of_html_file")
+//  });
+
+
+
+
+
+
+
+
+
+/* DO NOT TOUCH BELOW THIS */
+
+// Start the server running on port 3000 locally
 server.listen(PORT, function(){
 	console.log('Server running at port %d', PORT);
 });
+
 
