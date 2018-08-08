@@ -17,12 +17,9 @@ var server = require('http').Server(app);
 
 var bodyParser = require('body-parser');
 
-const session = require('express-session')
 
 //const flash = require('connect-flash')
-var mqtt = require('mqtt')
 
-var cookieParser = require('cookie-parser')
 
 //var owasp = require('owasp-password-strength-test')
 // ALL GET routes go here
@@ -45,7 +42,6 @@ app.use(bodyParser.json());
 
 app.use(express.static(path.join(__dirname, './public')));
 
-app.use(cookieParser())
 
 
 
