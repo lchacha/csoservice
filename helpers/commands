@@ -1,0 +1,8 @@
+# command to install npm in opensuse 
+# npm install npm@latest -g
+# Run the apache server
+sudo /opt/lampp/lampp start
+
+# Run the mosquito broket runs on port 1883 - default port
+#sudo mosquitto -c /etc/mosquitto/mosquitto.conf
+

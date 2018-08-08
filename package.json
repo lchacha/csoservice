@@ -1,0 +1,41 @@
+{
+  "name": "iotapp",
+  "version": "1.0.0",
+  "description": "Iot architecture monitoring and any other applications build over it",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "~1.17.1",
+    "chart.js": "^2.5.0",
+    "connect-ensure-login": "^0.1.1",
+    "connect-flash": "0.1.1",
+    "connect-redis": "3.2.0",
+    "cookieparser": "0.1.0",
+    "express": "^4.14.1",
+    "express-session": "^1.15.2",
+    "marko-widgets": "6.6.0",
+    "moment": "^2.18.1",
+    "nodejs": "^0.0.0",
+    "passport": "^0.3.2",
+    "passport-local": "^1.0.0",
+    "ping": "^0.2.2",
+    "pug": "2.0.0-beta11",
+    "redis": "^2.6.5",
+    "serve-spa": "1.1.1",
+    "socket.io": "1.7.3",
+    "socket.io-client": "1.7.3"
+  },
+  "devDependencies": {
+    "bower": "^1.8.0",
+    "nodemon": "^1.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./server.js"
+  },
+  "keywords": [
+    "IoT",
+    "parking"
+  ],
+  "author": "Lenah Chacha, Silas kamanza",
+  "license": "ISC"
+}
