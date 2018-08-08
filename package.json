@@ -25,7 +25,6 @@
     "socket.io-client": "1.7.3"
   },
   "devDependencies": {
-    "bower": "^1.8.0",
     "nodemon": "^1.11.0"
   },
   "scripts": {

@@ -1,4 +1,0 @@
-
-conn.end( function (err) {
-
-});
