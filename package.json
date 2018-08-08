@@ -1,7 +1,7 @@
 {
-  "name": "iotapp",
+  "name": "csoservice",
   "version": "1.0.0",
-  "description": "Iot architecture monitoring and any other applications build over it",
+  "description": "Being a CSo made easier",
   "main": "index.js",
   "dependencies": {
     "body-parser": "~1.17.1",
