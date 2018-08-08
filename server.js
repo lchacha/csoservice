@@ -72,6 +72,11 @@ app.get('/forms', function(req, res, next){
 	res.sendfile("./views/production/form.html")
 });
 
+app.get('/contactcsos', function(req, res, next){
+	
+	res.sendfile("./views/production/contactcsos.html")
+});
+
 //Template for adding a html page
 
 //  app.get('/the_name_of_the_page', function(req,re,next){
