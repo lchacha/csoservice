@@ -66,6 +66,12 @@ app.get('/tabledynamics', function(req, res, next){
 	
 	res.sendfile("./views/production/tables_dynamic.html")
 });
+
+app.get('/forms', function(req, res, next){
+	
+	res.sendfile("./views/production/form.html")
+});
+
 //Template for adding a html page
 
 //  app.get('/the_name_of_the_page', function(req,re,next){
