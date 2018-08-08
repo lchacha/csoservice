@@ -37,7 +37,7 @@
     "parking"
   ],
   "author": "Lenah Chacha, Silas kamanza",
-  "license": "ISC"
+  "license": "ISC",
   "engines"; {
      "node": "6.x.x"
   }
