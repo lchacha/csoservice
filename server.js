@@ -74,7 +74,7 @@ app.get('/forms', function(req, res, next){
 
 app.get('/contactcsos', function(req, res, next){
 	
-	res.sendfile("./views/production/arduino_registration.html")
+	res.sendfile("./views/production/contactcsos.html")
 });
 
 //Template for adding a html page
