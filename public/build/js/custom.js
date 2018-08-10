@@ -5063,5 +5063,31 @@ if (typeof NProgress != 'undefined') {
 		init_autocomplete();
 				
 	});	
+	$(document).ready(function() {
 	
+		var table = $('#datatable-buttons').DataTable();
+		console.log("blncskdcmsdc ") 
+		table.button().add( 0, {
+			action: function ( e, dt, button, config ) {
+			dt.ajax.reload();
+			},
+			className: "btn btn-sm btn-primary",
+			text: 'Add new'
+	//		editor: myeditor
+		} );
+		table.button().add( 1, {
+			action: function ( e, dt, button, config ) {
+			dt.ajax.reload();
+			},
+			className: "btn btn-sm",
+			text: 'Edit'
+		} );
+		table.button().add( 5, {
+			action: function ( e, dt, button, config ) {
+				dt.ajax.reload();
+			},
+			className: "btn btn-sm btn-danger",
+			text: 'Delete'
+		} );
+	});	
 

@@ -2516,6 +2516,18 @@ if (typeof NProgress != 'undefined') {
 					  dom: "Bfrtip",
 					  buttons: [
 						{
+						  extend: "New",
+						  className: "btn-sm"
+						},
+						{
+						  extend: "Edit",
+						  className: "btn-sm"
+						},
+						{
+						  extend: "Delete",
+						  className: "btn-sm"
+						},
+						{
 						  extend: "copy",
 						  className: "btn-sm"
 						},

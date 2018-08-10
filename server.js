@@ -15,10 +15,9 @@ var app = express();
 
 var server = require('http').Server(app);
 
-
+require('dotenv').config();
 
 //const flash = require('connect-flash')
-
 
 //var owasp = require('owasp-password-strength-test')
 // ALL GET routes go here
@@ -102,4 +101,20 @@ server.listen(PORT, function(){
 	console.log('Server running at port %d', PORT);
 });
 
+const db = require('./middleware/connectdb.js');
 
+app.get('/contacts', (req,res,next) => {
+	db.query(`CREATE TABLE IF NOT EXISTS person(title VARCHAR(40) not null, 
+                  firstName  VARCHAR(40) not null,
+		  secondNameName  VARCHAR(40) not null,
+		  organization  VARCHAR(40) not null,
+		  jobTitle  VARCHAR(40) not null,
+		  email PRIMARY KEY VARCHAR(80) not null,
+   		  phonenumber VARCHAR(40) not null)`, (err, res) => {
+	    if (err) {
+	      return next(err)
+	    }
+	    console.log(res)
+	    res.send(res.rows[0])
+	  })	
+})
