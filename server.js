@@ -60,7 +60,6 @@ app.get('/tables', function(req, res, next){
 	res.sendfile("./views/production/tables.html")
 });
 
-
 app.get('/tabledynamics', function(req, res, next){
 	
 	res.sendfile("./views/production/tables_dynamic.html")
@@ -71,9 +70,14 @@ app.get('/forms', function(req, res, next){
 	res.sendfile("./views/production/form.html")
 });
 
-app.get('/contactcsos', function(req, res, next){
+app.get('/addperson', function(req, res, next){
 	
-	res.sendfile("./views/production/contactcsos.html")
+	res.sendfile("./views/production/addpersons.html")
+});
+
+app.get('/contactservice', function(req, res, next){
+	
+	res.sendfile("./views/production/contactservice.html")
 });
 
 //Template for adding a html page
