@@ -1,21 +1,19 @@
 /*
-Error: Invalid CSS after "..../vendor/fonts"": expected "{", was ";"
-        on line 9 of /Users/stella/Desktop/Projects/zoom/public/vendors/select2/docs/css/font-awesome.scss
+Error: Invalid CSS after "...trap/variables"": expected "{", was ";"
+        on line 4 of /Users/stella/Desktop/Projects/zoom/public/gentelella/vendors/select2/docs/css/s2-docs.scss
 
-4: /*!
-5:  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome
-6:  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-7:  *\/
-8: 
-9: $fa-font-path: "../vendor/fonts";
-10: 
-11: @import "vendor/font-awesome/variables";
-12: @import "vendor/font-awesome/mixins";
-13: @import "vendor/font-awesome/path";
-14: @import "vendor/font-awesome/core";
+1: ---
+2: ---
+3: 
+4: @import "vendor/bootstrap/variables";
+5: 
+6: @import "result-repository";
+7: @import "sidenav";
+8: @import "hamburger";
+9: @import "code";
 
 Backtrace:
-/Users/stella/Desktop/Projects/zoom/public/vendors/select2/docs/css/font-awesome.scss:9
+/Users/stella/Desktop/Projects/zoom/public/gentelella/vendors/select2/docs/css/s2-docs.scss:4
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/scss/parser.rb:1278:in `expected'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/scss/parser.rb:1208:in `expected'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/scss/parser.rb:1203:in `tok!'
@@ -38,4 +36,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"..../vendor/fonts\"\": expected \"{\", was \";\"\A         on line 9 of /Users/stella/Desktop/Projects/zoom/public/vendors/select2/docs/css/font-awesome.scss\A \A 4: /*!\A 5:  *  Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome\A 6:  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)\A 7:  */\A 8: \A 9: $fa-font-path: \"../vendor/fonts\";\A 10: \A 11: @import \"vendor/font-awesome/variables\";\A 12: @import \"vendor/font-awesome/mixins\";\A 13: @import \"vendor/font-awesome/path\";\A 14: @import \"vendor/font-awesome/core\";"; }
+  content: "Error: Invalid CSS after \"...trap/variables\"\": expected \"{\", was \";\"\A         on line 4 of /Users/stella/Desktop/Projects/zoom/public/gentelella/vendors/select2/docs/css/s2-docs.scss\A \A 1: ---\A 2: ---\A 3: \A 4: @import \"vendor/bootstrap/variables\";\A 5: \A 6: @import \"result-repository\";\A 7: @import \"sidenav\";\A 8: @import \"hamburger\";\A 9: @import \"code\";"; }

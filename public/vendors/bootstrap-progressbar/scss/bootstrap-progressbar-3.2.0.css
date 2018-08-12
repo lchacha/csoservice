@@ -1,6 +1,6 @@
 /*
 Error: Undefined variable: "$line-height-computed".
-        on line 1 of /Users/stella/Desktop/Projects/csoservice/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss
+        on line 1 of /Users/stella/Desktop/Projects/zoom/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss
 
 1: $progressbarVerticalWidth: $line-height-computed;
 2: $progressbarFontSize: $font-size-small;
@@ -10,7 +10,7 @@ Error: Undefined variable: "$line-height-computed".
 6: 
 
 Backtrace:
-/Users/stella/Desktop/Projects/csoservice/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss:1
+/Users/stella/Desktop/Projects/zoom/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss:1
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/variable.rb:49:in `_perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/script/tree/node.rb:50:in `perform'
 /Applications/Adobe Dreamweaver CC 2018/Adobe Dreamweaver CC 2018.app/Contents/Resources/gems/rubygems/gems/sass-3.5.3/lib/sass/tree/visitors/perform.rb:482:in `visit_variable'
@@ -45,4 +45,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined variable: \"$line-height-computed\".\A         on line 1 of /Users/stella/Desktop/Projects/csoservice/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss\A \A 1: $progressbarVerticalWidth: $line-height-computed;\A 2: $progressbarFontSize: $font-size-small;\A 3: \A 4: // bootstrap-progressbar global styles\A 5: // -----------------------------------\A 6: "; }
+  content: "Error: Undefined variable: \"$line-height-computed\".\A         on line 1 of /Users/stella/Desktop/Projects/zoom/public/vendors/bootstrap-progressbar/scss/bootstrap-progressbar-3.2.0.scss\A \A 1: $progressbarVerticalWidth: $line-height-computed;\A 2: $progressbarFontSize: $font-size-small;\A 3: \A 4: // bootstrap-progressbar global styles\A 5: // -----------------------------------\A 6: "; }
