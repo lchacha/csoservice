@@ -49,7 +49,8 @@ $(document).ready(function() {
 				  className: "btn-sm btn-danger"
 				}
 			],
-			select: true
+			select: true,
+			lengthChange: true
 		
 		});
 		

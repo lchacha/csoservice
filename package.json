@@ -4,7 +4,7 @@
   "description": "Being a CSo made easier",
   "main": "index.js",
   "dependencies": {
-    "body-parser": "~1.17.1",
+    "body-parser": "^1.17.2",
     "chart.js": "^2.5.0",
     "connect-ensure-login": "^0.1.1",
     "connect-flash": "0.1.1",

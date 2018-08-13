@@ -60,6 +60,7 @@ app.get('/tables', function(req, res, next){
 	res.sendfile("./views/production/tables.html")
 });
 
+
 app.get('/tabledynamics', function(req, res, next){
 	
 	res.sendfile("./views/production/tables_dynamic.html")
@@ -70,14 +71,9 @@ app.get('/forms', function(req, res, next){
 	res.sendfile("./views/production/form.html")
 });
 
-app.get('/addperson', function(req, res, next){
+app.get('/contactcsos', function(req, res, next){
 	
-	res.sendfile("./views/production/addpersons.html")
-});
-
-app.get('/contactservice', function(req, res, next){
-	
-	res.sendfile("./views/production/contactservice.html")
+	res.sendfile("./views/production/contactcsos.html")
 });
 
 //Template for adding a html page
@@ -88,33 +84,56 @@ app.get('/contactservice', function(req, res, next){
 
 
 
-
-
-
-
-
-
 /* DO NOT TOUCH BELOW THIS */
 
+// Start the database, confirm that it is up and then start the server for the application
+const db = require('./middleware/connectdb.js');
+
+app.get('/contacts', (req,res,next) => {
+	db.query(`INSERT INTO person (title, firstName, secondnamename, gender, organization, jobTitle, Email, phoneNumber)  VALUES ('Mr', 'Silas', 'Kamanza', 'Male', 'International Criminal Justice', 'Program Officer', 'silas.kamanza@gmail.com', '+254123456789')`, (err, res) => {
+	    if (err) {
+	      return next(err)
+	    }
+	    console.log(res)
+	    console.log('success')
+	  })	
+	res.send("Successful")
+})
+
+
+app.get('/person', (req,res,next) => {
+//	db.query(`DROP TABLE person`, (err, rows) => {
+	db.query(`SELECT * FROM person`, (err, result) => {
+	    if (err) {
+	      return next(err)
+	    }
+	    res.send(result.rows)
+	    console.log('success')
+	  })	
+})
+
+
+app.get('/create', (req,res,next) => {
+	db.query(`CREATE TABLE IF NOT EXISTS person(person_id serial unique not null, 
+		  title VARCHAR(40) not null, 
+                  firstName  VARCHAR(40) not null,
+		  secondNameName  VARCHAR(40) not null,
+		  gender  VARCHAR(10) not null,
+		  organization  VARCHAR(40) not null,
+		  jobTitle  VARCHAR(40) not null,
+		  email VARCHAR(80) not null,
+   		  phonenumber VARCHAR(40) not null,
+		  primary key(email))`, (err, res) => {
+	    if (err) {
+	      return next(err)
+	    }
+	    console.log(res)
+	  })	
+})
 // Start the server running on port 3000 locally
 server.listen(PORT, function(){
 	console.log('Server running at port %d', PORT);
 });
 
-const db = require('./middleware/connectdb.js');
 
-app.get('/contacts', (req,res,next) => {
-	db.query(`CREATE TABLE IF NOT EXISTS person(title VARCHAR(40) not null, 
-                  firstName  VARCHAR(40) not null,
-		  secondNameName  VARCHAR(40) not null,
-		  organization  VARCHAR(40) not null,
-		  jobTitle  VARCHAR(40) not null,
-		  email PRIMARY KEY VARCHAR(80) not null,
-   		  phonenumber VARCHAR(40) not null)`, (err, res) => {
-	    if (err) {
-	      return next(err)
-	    }
-	    console.log(res)
-	    res.send(res.rows[0])
-	  })	
-})
+
