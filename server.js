@@ -76,6 +76,10 @@ app.get('/contactcsos', function(req, res, next){
 	res.sendfile("./views/production/contactcsos.html")
 });
 
+
+app.get('/addperson', function(req, res, next){
+	res.sendfile("./views/production/addpersons.html")
+});
 //Template for adding a html page
 
 //  app.get('/the_name_of_the_page', function(req,re,next){
