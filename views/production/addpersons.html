@@ -20,12 +20,12 @@
     <div class="container body">
       <div class="main_container">
 			<div class="row">
-			<div class="col-md-6 col-xs-12">
+			<div class="col-md-12 ">
 			<div class="x_panel">
 				<div class="x_content">
                   <div class="x_title">
                     
-					  <h2>Add New Contact<small>Enter Persons Details</small></h2>
+					  <h2 id='titleText'>Add New Contact<small>Enter Persons Details</small></h2>
                     <ul class="nav navbar-right panel_toolbox">
                       <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                       </li>
@@ -43,96 +43,62 @@
                     </ul>
                     <div class="clearfix"></div>
                   </div>
-                   <br />
                   <div class="x_content">
-                 <form class="form-horizontal form-label-left input_mask">
-				
+			 <form class="form-horizontal form-label-left input_mask">
 				<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback"></div>
 					<label>Personal Details:</label>
-					 </div>
-					 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder=" Dr./Prof./Mr./Mrs.">
-                        <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-					 
-					<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-					 <label>Gender*:</label>
-						<p>
-						Male:
-                   	 	<input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> 
-						Female:
-                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-						Other:
-                        <input type="radio" class="flat" name="gender" id="genderF" value="F" />
-						</p>
-					 </div>
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name">
-                        <span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-						
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess3" placeholder="Last Name">
-                        <span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
-						 					 					  
-                      </div>	
-					  
-					 
-					<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
-					 <label>Organizational Details:</label>
-					</div>
-					 
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Email">
-                        <span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-						 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess5" placeholder="Phone">
-                        <span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
-                      </div>
-					 
-					  <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Organization">
-                        <span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
-                      </div>
-					
-                      <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-                        <input type="text" class="form-control" id="inputSuccess3" placeholder="Job Title/Position">
-                        <span class="fa fa-user-plus form-control-feedback right" aria-hidden="true"></span>
-                      </div>
-
-						
-                      <!--<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Read-Only Input</label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" class="form-control" readonly="readonly" placeholder="Read-Only Input">
-                        </div>
-                      </div>-->
-                      <!--<div class="form-group">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Date Of Birth <span class="required">*</span>
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
-                        </div>
-                      </div>-->
-					 
-				
-					 
-                      <div class="ln_solid"></div>
-					           <div class="form-group">
-                     <div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-                          <button type="button" class="btn btn-primary">Cancel</button>
-						   <button class="btn btn-primary" type="reset">Reset</button>
-                          <button type="submit" class="btn btn-success">Submit</button>
-                        </div>
-					 </div>
-                    </form>
-					</div>	
 				</div>
-			</div>
-		</div>
-		</div>
-		</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control has-feedback-left" id="title" placeholder=" Dr./Prof./Mr./Mrs.">
+					<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<label>Gender*:</label>
+					<p>Male:
+					<input type="radio" class="flat" name="gender" id="genderM" value="M" checked="" required /> 
+							Female:
+					<input type="radio" class="flat" name="gender" id="genderF" value="F" />
+							Other:
+					<input type="radio" class="flat" name="gender" id="genderO" value="O" />
+					</p>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="First Name">
+					<span class="fa fa-user form-control-feedback left" aria-hidden="true"></span>
+				</div>
+							
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control" id="inputSuccess3" placeholder="Last Name">
+					<span class="fa fa-user form-control-feedback right" aria-hidden="true"></span>
+				</div>	
+				<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+					 <label>Organizational Details:</label>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control has-feedback-left" id="inputSuccess4" placeholder="Email">
+					<span class="fa fa-envelope form-control-feedback left" aria-hidden="true"></span>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control" id="inputSuccess5" placeholder="Phone">
+					<span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Organization">
+					<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+				</div>
+				<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+					<input type="text" class="form-control" id="inputSuccess3" placeholder="Job Title/Position">
+					<span class="fa fa-user-plus form-control-feedback right" aria-hidden="true"></span>
+				</div>
+				<div class="ln_solid"></div>
+				<div class="form-group">
+				<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+					 <button type="button" class="btn btn-primary">Cancel</button>
+					 <button class="btn btn-primary" type="reset">Reset</button>
+					<button type="submit" class="btn btn-success">Submit</button>
+				</div>
+                    	</form>
+		</div>	
 	</div>
 <!-- End of Page content -->
 
