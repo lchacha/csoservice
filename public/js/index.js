@@ -17,47 +17,67 @@ $(document).ready(function() {
 	
 $(document).ready(function() {
 
-	$(document).ready(function(){
-		$('#datatable-example').DataTable({
-			"dataType": 'json',
-			 dom: 'Bfrtip',
-			"ajax":{
-			 url: '/person',
-			dataSrc: ''
+	$('#datatable-example').DataTable({
+		"dataType": 'json',
+		responsive: true,
+		 dom: 'Bfrtip',
+		"ajax":{
+		 url: '/person',
+		dataSrc: ''
+		},
+		columns:[
+		  { data:"title"},
+		  { data:"firstname"},
+		  { data:"secondnamename"},
+		  { data: "gender"},
+		  { data: "organization"},
+		  { data: "jobtitle"},
+		  { data: "email"},
+		  { data: "phonenumber"}
+		],
+		buttons: [
+			{
+			  text: "Add New",
+			  className: "btn-sm btn-primary",
+			  action: function(e, dt, node, config){
+				 $('.modal-body').load('/addperson')
+				$('#exampleModal').modal('show')
+			  }
 			},
-			columns:[
-			  { data:"title"},
-			  { data:"firstname"},
-			  { data:"secondnamename"},
-			  { data: "gender"},
-			  { data: "organization"},
-			  { data: "jobtitle"},
-			  { data: "email"},
-			  { data: "phonenumber"}
-			],
-			buttons: [
-				{
-				  extend: "copy",
-				  className: "btn-sm btn-primary"
-				},
-				{
-				  extend: "print",
-				  className: "btn-sm"
-				},
-				{
-				  text: "Delete",
-				  className: "btn-sm btn-danger"
-				}
-			],
-			select: true,
-			lengthChange: true
-		
-		});
-		
+			{
+			  extend: "copy",
+			  className: "btn-sm"
+			},
+			{
+			  extend: "print",
+			  className: "btn-sm"
+			},
+			{
+			  text: "Delete",
+			  className: "btn-sm btn-danger"
+			}
+		],
+		select: true,
+		hash: true
+	
 	});
+	
 	
 });
 
-$('#datatable-example tbody').on('select', function(){
-	alert("I am selected")
+
+$(document).ready(function() {
+
+	var table = $('#datatable-example').DataTable();
+	$('#datatable-example tbody').on('dblclick', 'tr', function(){
+		var data = table.row(this).data()
+			$('.modal-body').load('/addperson')
+			$('.modal-title').text('Edit Contact')
+			$('#exampleModal').modal('show')
+		$('#titleText').text("Edit")
+		
+		$('#title').text(data.title)
+		
+	})
+	
 })	
