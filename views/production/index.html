@@ -39,7 +39,6 @@
     <link href="../vendors/pnotify/dist/pnotify.css" rel="stylesheet">
     <link href="../vendors/pnotify/dist/pnotify.buttons.css" rel="stylesheet">
     <link href="../vendors/pnotify/dist/pnotify.nonblock.css" rel="stylesheet">
-    </script> 
   </head>
   <body class="nav-md">
     <div class="container body">
@@ -94,24 +93,25 @@
            
                    <li><a><i class="fa fa-cogs"></i> Application Configuration <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
-           <li><a  id='parkinglot_registration' href="#parkinglot_registration">Parking Lot Registration</a></li>
-          <li><a id="parkingbay_registration" href="#parkingbay_registration">Parking Bay Registration</a></li>
+                    <li><a  id='parkinglot_registration' href="#parkinglot_registration">Parking Lot Registration</a></li>
+                    <li><a id="parkingbay_registration" href="#parkingbay_registration">Parking Bay Registration</a></li>
                  
                     </ul>
                   </li>
 
                   <li>
-                 <a><i class="fa fa-user"></i> User Administration <span class="fa fa-chevron-down"></span></a>
-                 <ul class="nav child_menu">
+                       <a><i class="fa fa-user"></i> User Administration <span class="fa fa-chevron-down"></span></a>
+                      <ul class="nav child_menu">
                       <li><a  id='user_profile' href="#user_profile">User Registration</a></li>
                       <li><a id="role_registration" href="#role_registration">Add user role</a></li>
                      
                     </ul>
                   </li>
-
-              </div>
+                </ul>
+              
              
                  
+              </div>
             </div>
             <!-- /sidebar menu -->
 
@@ -220,7 +220,8 @@
                             <li><a class="close-link"><i class="fa fa-close"></i></a>
                             </li>
                           </ul>
- 		  <table id="datatable-example" class="hover table-striped table-bordered display">
+                          
+ 		                  <table id="datatable-example" class="hover table-striped table-bordered display">
                       <thead>
                         <tr>
                           <th>Title</th>
@@ -233,7 +234,7 @@
                           <th>Phone Number</th>
                         </tr>
                       </thead>	
-		      <tfoot>
+		                  <tfoot>
                           <th>Title</th>
                           <th>First Name</th>
                           <th>Second Name</th>
@@ -242,12 +243,12 @@
                           <th>Job Title</th>
                           <th>E-mail</th>
                           <th>Phone Number</th>
-		      </tfoot> 
+		                 </tfoot> 
                    </table>
- 
-                           <div class="clearfix"></div>
-                         </div>
-                         <div class="x_content">
+                         
+                    <div class="clearfix"></div>
+                         </div>  </div>
+                    <div class="x_content">
  
                                 <div class="col-md-10 col-sm-8 col-xs-12"> <!-- bs-example-popovers" > -->
                                  <ul  class="list-unstyled event_list msg_list" role="menu" id="systemEvents">
@@ -256,27 +257,11 @@
                                    
                                </div>
                          </div>
-                         </div>  
-                        
-                     </div>
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
-		  <div class="modal-dialog" role="document">
-		    <div class="modal-content">
-		      <div class="modal-header">
-			<h5 class="modal-title"> New Contact</h5>
-			<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-			  <span aria-hidden="true">&times;</span>
-			</button>
-		      </div>
-		      <div class="modal-body">
-		      </div>
-		      <div class="modal-footer">
-			<button type="button" class="btn btn-primary">Bulk Import</button>
-			<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-		      </div>
-		    </div>
-		  </div>
-		</div> 
+                         
+                </div>  
+        </div>   
+		
+       
                 
           <!-- End main content-->
          <!-- footer content -->
@@ -287,9 +272,28 @@
            <div class="clearfix"></div>
          </footer>
          <!-- /footer content -->
+          
        </div>
+          <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog">
+		         <div class="modal-dialog" role="document">
+		            <div class="modal-content">
+		               <div class="modal-header">
+		                	<h5 class="modal-title"> New Contact</h5>
+			                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			                <span aria-hidden="true">&times;</span>
+			                </button>
+		             </div>
+		             <div class="modal-body">
+		             </div>
+		             <div class="modal-footer">
+			           <button type="button" class="btn btn-primary">Bulk Import</button>
+			           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		             </div>
+		    </div>
+		  </div>
+		</div> 
  
-     </div>
+     
  
      <!-- jQuery -->
      <script src="../vendors/jquery/dist/jquery.min.js"></script>
