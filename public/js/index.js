@@ -28,9 +28,10 @@ $(document).ready(function() {
 		columns:[
 		  { data:"title"},
 		  { data:"firstname"},
-		  { data:"secondnamename"},
+		  { data:"secondname"},
 		  { data: "gender"},
 		  { data: "organization"},
+		  { data: "department"},
 		  { data: "jobtitle"},
 		  { data: "email"},
 		  { data: "phonenumber"}
