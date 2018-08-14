@@ -1,5 +1,5 @@
 var contactEditor;
-var appname = "";
+var table
 var appName = ""
 $(document).ready(function() {
 
@@ -17,10 +17,10 @@ $(document).ready(function() {
 	
 $(document).ready(function() {
 
-	$('#datatable-example').DataTable({
+	var table = $('#datatable-example').DataTable({
 		"dataType": 'json',
-		responsive: true,
-		 dom: 'Bfrtip',
+		responsive:true,
+		dom: 'Bfrtip',
 		"ajax":{
 		 url: '/person',
 		dataSrc: ''
@@ -59,16 +59,14 @@ $(document).ready(function() {
 		],
 		select: true,
 		hash: true
-	
 	});
-	
+	new $.fn.dataTable.FixedHeader( table );	
 	
 });
 
 
 $(document).ready(function() {
-
-	var table = $('#datatable-example').DataTable();
+	var table = $('#datatable-example').DataTable()
 	$('#datatable-example tbody').on('dblclick', 'tr', function(){
 		var data = table.row(this).data()
 			$('.modal-body').load('/addperson')
