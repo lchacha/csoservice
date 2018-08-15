@@ -78,18 +78,11 @@ app.get('/contactcsos', function(req, res, next){
 });
 
 
-<<<<<<< HEAD
-=======
-app.get('/addperson', function(req, res, next){
-	res.sendfile("./views/production/addpersons.html")
-});
-
 app.get('/orgform', function(req, res, next){
 	res.sendfile("./views/production/orgform.html")
 });
 
 
->>>>>>> ee27dfaea5bab5a6ec4ef2841fb6c7c2d0b65bf8
 //Template for adding a html page
 
 //  app.get('/the_name_of_the_page', function(req,re,next){
