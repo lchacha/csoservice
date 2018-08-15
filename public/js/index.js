@@ -28,6 +28,7 @@ $(document).ready(function() {
 			$('#dynamic_content').html("")
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
+
 		if( pageRef != "/" )
 		{
 			if(pageRef)
