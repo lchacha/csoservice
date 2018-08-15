@@ -10,8 +10,7 @@ function getPage(pageReference){
 	type: "GET",
 	dataType: "html",
 	success: function( response ){
-		 $('#dynamic_content').empty()
-		 $('#dynamic_content').html(response)
+			 $('#dynamic_content').html(response)
 	},
 	error: function (xhr, status, errorThrown){
 		alert(errorThrown)
@@ -26,6 +25,7 @@ $(document).ready(function() {
 
 	  // This function handles each anchor on the page
 	  $('a').on('click', function(e){
+			$('#dynamic_content').html("")
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
 		if( pageRef != "/" )
