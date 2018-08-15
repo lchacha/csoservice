@@ -1,17 +1,35 @@
 var contactEditor;
 var table
 var appName = ""
+// Functions
+
+
+function getPage(pageReference){
+	$.ajax({
+	url: pageReference,
+	type: "GET",
+	dataType: "html",
+	success: function( response ){
+		 $('#dynamic_content').html(response)
+	},
+	error: function (xhr, status, errorThrown){
+		alert(status + "  Something went wrong")
+		
+	}
+     })
+}
+// this function handles all SPA calls
 $(document).ready(function() {
 
-	  $('#addPerson').click(function(){
-        	$('#dynamic_content').load('/addperson')
-    	  });
 
-	  $('#contactservice').click(function(){
-        	$('#dynamic_content').load('/contactservice')
+	  // This function handles each anchor on the page
+	  $('a').on('click', function(e){
+		e.preventDefault()
+		var pageRef = $(this).attr('href')
+		var targetRef = "/app"+ pageRef
+		alert(targetRef)
+		getPage(targetRef)
     	  });
-
-	
 });
 
 	

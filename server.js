@@ -55,9 +55,10 @@ app.get('/', function(req, res, next){
 	res.sendfile("./views/production/index.html")
 });
 
-app.get('/tables', function(req, res, next){
-	
-	res.sendfile("./views/production/tables.html")
+app.get('/app/:targetPage', function(req, res, next){
+	var page = req.params.targetPage 
+
+	res.sendfile("./views/production/" + page)
 });
 
 
@@ -77,9 +78,6 @@ app.get('/contactcsos', function(req, res, next){
 });
 
 
-app.get('/addperson', function(req, res, next){
-	res.sendfile("./views/production/addpersons.html")
-});
 //Template for adding a html page
 
 //  app.get('/the_name_of_the_page', function(req,re,next){
@@ -94,7 +92,7 @@ app.get('/addperson', function(req, res, next){
 const db = require('./middleware/connectdb.js');
 
 app.get('/contacts', (req,res,next) => {
-	db.query(`INSERT INTO person (title, firstName, secondnamename, gender, organization, jobTitle, Email, phoneNumber)  VALUES ('Mr', 'Silas', 'Kamanza', 'Male', 'International Criminal Justice', 'Program Officer', 'silas.kamanza@gmail.com', '+254123456789')`, (err, res) => {
+	db.query(`INSERT INTO person (title, firstName, secondname, gender, organization, department, jobTitle, Email, phoneNumber)  VALUES ('Mr', 'Silas', 'Kamanza', 'Male', 'International Criminal Justice', 'Business','Program Officer', 'silas.kamanza@gmail.com', '+254123456789')`, (err, res) => {
 	    if (err) {
 	      return next(err)
 	    }
@@ -121,9 +119,10 @@ app.get('/create', (req,res,next) => {
 	db.query(`CREATE TABLE IF NOT EXISTS person(person_id serial unique not null, 
 		  title VARCHAR(40) not null, 
                   firstName  VARCHAR(40) not null,
-		  secondNameName  VARCHAR(40) not null,
+		  secondName VARCHAR(40) not null,
 		  gender  VARCHAR(10) not null,
 		  organization  VARCHAR(40) not null,
+		  department  VARCHAR(40) not null,
 		  jobTitle  VARCHAR(40) not null,
 		  email VARCHAR(80) not null,
    		  phonenumber VARCHAR(40) not null,
