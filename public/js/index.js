@@ -28,8 +28,15 @@ $(document).ready(function() {
 	  $('a').on('click', function(e){
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
-		var targetRef = "/app/"+ pageRef
-		getPage(targetRef)
+		if( pageRef != "/" )
+		{
+			if(pageRef)
+			{
+				var targetRef = "/app/"+ pageRef
+				getPage(targetRef)
+			}
+		}
+		
     	  });
 
 });
