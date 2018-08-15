@@ -10,9 +10,11 @@ function getPage(pageReference){
 	type: "GET",
 	dataType: "html",
 	success: function( response ){
+		 $('#dynamic_content').empty()
 		 $('#dynamic_content').html(response)
 	},
 	error: function (xhr, status, errorThrown){
+		alert(errorThrown)
 		alert(status + "  Something went wrong")
 		
 	}
@@ -26,14 +28,11 @@ $(document).ready(function() {
 	  $('a').on('click', function(e){
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
-		var targetRef = "/app"+ pageRef
+		var targetRef = "/app/"+ pageRef
+		alert(targetRef)
 		getPage(targetRef)
     	  });
 
-		$('#orgform').click(function(){
-                	$('#dynamic_content').load('/orgform')
-		  });
-	
 });
 
 	
