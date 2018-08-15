@@ -11,6 +11,9 @@ $(document).ready(function() {
         	$('#dynamic_content').load('/contactservice')
     	  });
 
+		$('#orgform').click(function(){
+        	$('#dynamic_content').load('/orgform')
+    	  });
 	
 });
 
