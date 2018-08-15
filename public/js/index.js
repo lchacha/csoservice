@@ -27,9 +27,13 @@ $(document).ready(function() {
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
 		var targetRef = "/app"+ pageRef
-		alert(targetRef)
 		getPage(targetRef)
     	  });
+
+		$('#orgform').click(function(){
+                	$('#dynamic_content').load('/orgform')
+		  });
+	
 });
 
 	
