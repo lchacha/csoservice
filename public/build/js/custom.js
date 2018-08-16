@@ -5030,7 +5030,7 @@ if (typeof NProgress != 'undefined') {
 		init_sparklines();
 		init_flot_chart();
 		init_sidebar();
-		init_wysiwyg();
+		//init_wysiwyg();
 		init_InputMask();
 		init_JQVmap();
 		init_cropper();
@@ -5052,11 +5052,11 @@ if (typeof NProgress != 'undefined') {
 		init_select2();
 		init_validator();
 		init_DataTables();
-		init_chart_doughnut();
+		//init_chart_doughnut();
 		init_gauge();
 		init_PNotify();
 		init_starrr();
-		init_calendar();
+		//init_calendar();
 		init_compose();
 		init_CustomNotification();
 		init_autosize();
