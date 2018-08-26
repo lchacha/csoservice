@@ -94,50 +94,104 @@ app.get('/orgform', function(req, res, next){
 /* DO NOT TOUCH BELOW THIS */
 
 // Start the database, confirm that it is up and then start the server for the application
-const db = require('./middleware/connectdb.js');
+var organization = require("./controllers/organizationController.js") 
+var person = require("./controllers/personController.js")
+var WorkingGroup = require("./controllers/coalitionController.js")
 
-app.get('/contacts', (req,res,next) => {
-	db.query(`INSERT INTO person (title, firstName, secondname, gender, organization, department, jobTitle, Email, phoneNumber)  VALUES ('Mr', 'Silas', 'Kamanza', 'Male', 'International Criminal Justice', 'Business','Program Officer', 'silas.kamanza@gmail.com', '+254123456789')`, (err, res) => {
-	    if (err) {
-	      return next(err)
-	    }
-	    console.log(res)
-	    console.log('success')
-	  })	
-	res.send("Successful")
+
+app.post('/entity/:type', (req,res,next) => {
+	var type = req.params.type
+
+	if (type == "organization")
+	{
+		
+		newOrg = new organization()
+		newOrg.saveOrganization("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17", "18","19", function(err){
+			console.log("error occured")
+			next(err)
+		},
+		function(success){
+			console.log("success")
+			res.send("success again" )
+		})
+	
+	}
+	if (type == "person")
+	{
+		newPerson = new person()
+		newPerson.savePerson("Mr", "Lenah", "Chacha", " Female", "blablabla", "Eating", "coodinator", "lenah.chacha@gmail.com", "+254 123456789", function(err){
+			console.log(err)
+			next(err)
+		},
+		function(success){
+			console.log(success)
+			res.send("success")
+		})
+	}
+	if (type == "workingGroup")
+	{
+		wg = new WorkingGroup()
+		members = "{ICJ, Host}"
+		wg.saveCoalition("bla", "bla", "bla", members, function(err){
+			console.log("error saving coalition")
+			next(err)
+		}, function(success){
+			console.log("success saving Coalition")
+			res.send("success")
+		})	
+	}
 })
 
+app.get('/organization', (req, res, next) => {
+		org = new organization()
+		org.getAllOrganization(function(err){
+			console.log()
+			next(err)
+		}, function(success){
+			console.log(success)
+			res.send(success.rows)
+		})
+})
 
-app.get('/person', (req,res,next) => {
-//	db.query(`DROP TABLE person`, (err, rows) => {
-	db.query(`SELECT * FROM person`, (err, result) => {
-	    if (err) {
-	      return next(err)
-	    }
-	    res.send(result.rows)
-	    console.log('success')
-	  })	
+app.get('/coalition', (req, res, next) => {
+		wg = new WorkingGroup()
+		wg.getAllCoalitions(function(err){
+			console.log()
+			next(err)
+		}, function(success){
+			console.log(success)
+			res.send(success)
+		})
+})
+
+app.get('/person', (req, res, next) => {
+		console.log("Called person API")
+		newPerson = new person()
+		newPerson.getAllPeople(function(err){
+			console.log()
+			next(err)
+		}, function(success){
+			console.log(success)
+			res.send(success.rows)
+		})
+})
+ var db = require("./middleware/connectdb.js")
+
+app.get('/helper', (req,res,next) => {
+	db.query(`DROP TABLE workingroup`, (err, rows) => {
+		if(err)
+			console.log(err)
+
+		console.log(rows)
+	})
+	
+	
 })
 
 
 app.get('/create', (req,res,next) => {
-	db.query(`CREATE TABLE IF NOT EXISTS person(person_id serial unique not null, 
-		  title VARCHAR(40) not null, 
-                  firstName  VARCHAR(40) not null,
-		  secondName VARCHAR(40) not null,
-		  gender  VARCHAR(10) not null,
-		  organization  VARCHAR(40) not null,
-		  department  VARCHAR(40) not null,
-		  jobTitle  VARCHAR(40) not null,
-		  email VARCHAR(80) not null,
-   		  phonenumber VARCHAR(40) not null,
-		  primary key(email))`, (err, res) => {
-	    if (err) {
-	      return next(err)
-	    }
-	    console.log(res)
-	  })	
 })
+
 // Start the server running on port 3000 locally
 server.listen(PORT, function(){
 	console.log('Server running at port %d', PORT);

@@ -1,11 +1,12 @@
 var persons 
 
-$(document).ready(function() {
 
-	var table = $('#datatable-buttons').DataTable();
+	
+function loadOrganizations(){
+	
 
-	var requestPersons = $.ajax({
-		url:'/person',
+	var requestOrganizations = $.ajax({
+		url:'/organization',
 		type: "GET",
 		dataType: 'json',
 		contentType: "application/json; charset=utf-8",
@@ -29,6 +30,10 @@ $(document).ready(function() {
 	$('#contactservice').click(function(){
         	$('#dynamic_content').load('/contactservice')
     	});
+}
+
+$(document).ready(function() {
+	
 
 	
 });
