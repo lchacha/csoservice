@@ -25,9 +25,11 @@ $(document).ready(function() {
 
 	  // This function handles each anchor on the page
 	  $('a').on('click', function(e){
-			$('#dynamic_content').html("")
+		$('#dynamic_content').html("")
 		e.preventDefault()
 		var pageRef = $(this).attr('href')
+		var id = $(this).attr('id')
+		history.replaceState(null, '', id)
         
 		if( pageRef != "/" )
 		{

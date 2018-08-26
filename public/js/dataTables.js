@@ -6,7 +6,7 @@ $(document).ready(function() {
 		dom: 'Bfrtip',
 		"ajax":{
 		 url: '/person',
-		dataSrc: ''
+		 dataSrc: ''
 		},
 		columns:[
 		  { data:"title"},
@@ -24,7 +24,7 @@ $(document).ready(function() {
 			  text: "Add New",
 			  className: "btn-sm btn-primary",
 			  action: function(e, dt, node, config){
-				 $('.modal-body').load('/addperson')
+				 $('.modal-body').load('/addperson.html')
 				$('#exampleModal').modal('show')
 			  }
 			},
