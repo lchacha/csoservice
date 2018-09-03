@@ -1,8 +1,8 @@
 $(document).ready(function() {
-	
-	
+		
+	window.init_SmartWizard()	
 
-$('#neworg').submit(function(e){
+$('#').submit(function(e){
 	e.preventDefault()
 
 	var messageData={}
@@ -43,5 +43,5 @@ $('#neworg').submit(function(e){
 			console.log('text status '+textStatus+', err '+err)
 		}
 	})
-})
+	})
 })
