@@ -1,302 +1,142 @@
-            <!DOCTYPE html>
-            <html lang="en">
-              <head>
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-                <!-- Meta, title, CSS, favicons, etc. -->
-                <meta charset="utf-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport">
+<h2>Example: Vertical Style</h2>
+<!-- Tabs -->
+<div id="wizard_verticle" class="form_wizard wizard_verticle">
+	<ul class="list-unstyled wizard_steps">
+		<li>
+			<a href="#step-11">
+				<span class="step_no">1</span>
+			</a>
+		</li>
+		<li>
+			<a href="#step-22">
+				<span class="step_no">2</span>
+			</a>
+		</li>
+		<li>
+			<a href="#step-33">
+				<span class="step_no">3</span>
+			</a>
+		</li>
+		<li>
+			<a href="#step-44">
+				<span class="step_no">4</span>
+			</a>
+		</li>
+	</ul>
 
-              </head>
-<!-- page content -->
-		<body class="nav-md">
-   		 <div class="container body">
-   			<div class="main_container">
-	   			<div class="row">
-						<div class="col-md-12 col-sm-12 col-xs-12">
-								<div class="x_panel">
-								  <div class="x_title">
-									<h2>Enter the Mandate of the Coalition/Working Group<small>Description & Objectives</small></h2>
-									<ul class="nav navbar-right panel_toolbox">
-									  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-									  </li>
-									  <li class="dropdown">
-										<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-										<ul class="dropdown-menu" role="menu">
-										  <li><a href="#">Settings 1</a>
-										  </li>
-										  <li><a href="#">Settings 2</a>
-										  </li>
-										</ul>
-									  </li>
-									  <li><a class="close-link"><i class="fa fa-close"></i></a>
-									  </li>
-									</ul>
-									<div class="clearfix"></div>
-								  </div>
-
-								        <input type="file" id="myfile" name="myfile" class="btn btn-primary">
-                                        <input type="submit" id="submit" name="submit" value="Upload File Now" ><span>Use format in </span><a href="#">sample.csv</a>
-										<form id='newPerson' class="form-horizontal form-label-left input_mask">
-									   <div class="form-group">
-									 <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback"></div>
-									 <label>Coalition Details*:</label>
-									   <br />
-									   <div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
-										 <input type="text" class="form-control has-feedback-left" required="required" id="inputSuccess2" placeholder="Full Name of Coalition/Working Group">
-										 <span class="fa fa-institution form-control-feedback left" aria-hidden="true"></span>
-									 </div>
-									 <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
-											<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Convener">
-											<span class="fa fa-search form-control-feedback left" aria-hidden="true"></span>
-										</div>
-										<div class="col-md-6 col-sm-12 col-xs-12 form-group has-feedback">
-												<button type="button" class="btn btn-primary">Confirm Convener</button>
-										</div>
-												
-										<div class="col-md-12 col-sm-12 col-xs-12">
-												<div class="x_panel">
-													<div class="x_title">
-														<h2>Convener <small>Details</small></h2>
-														<ul class="nav navbar-right panel_toolbox">
-															<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-															</li>
-															<li class="dropdown">
-																<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-																<ul class="dropdown-menu" role="menu">
-																	<li><a href="#">Settings 1</a>
-																	</li>
-																	<li><a href="#">Settings 2</a>
-																	</li>
-																</ul>
-															</li>
-															<li><a class="close-link"><i class="fa fa-close"></i></a>
-															</li>
-														</ul>
-														<div class="clearfix"></div>
-													</div>
-													<div class="x_content">
-				
-															<table class="table table-striped jambo_table bulk_action">
-															<thead>
-																<tr>
-																	<th>#</th>
-																	<th>Org.Member No</th>
-																	<th>Orgnization Name</th>
-																	<th>Actions</th>
-																</tr>
-															</thead>
-															<tbody>
-																<tr>
-																	<th scope="row">1</th>
-																	<td>Mark</td>
-																	<td>Otto</td>
-																	<td>@mdo</td>
-																</tr>
-															</tbody>
-														</table>
-				
-													</div>
-												</div>
-											</div>			
-
-											<div class="col-md-12 col-sm-12 col-xs-12">
-											<br />
-											<label>Coalition Profile*:</label>
-											<br />
-												</div>
-
-									 <br />
-								  <div class="x_content">	
-									<div id="alerts"></div>
-									<div class="btn-toolbar editor" data-role="editor-toolbar" data-target="#editor-one">
-									  <div class="btn-group">
-										<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font"><i class="fa fa-font"></i><b class="caret"></b></a>
-										<ul class="dropdown-menu">
-										</ul>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn dropdown-toggle" data-toggle="dropdown" title="Font Size"><i class="fa fa-text-height"></i>&nbsp;<b class="caret"></b></a>
-										<ul class="dropdown-menu">
-										  <li>
-											<a data-edit="fontSize 5">
-											  <p style="font-size:17px">Huge</p>
-											</a>
-										  </li>
-										  <li>
-											<a data-edit="fontSize 3">
-											  <p style="font-size:14px">Normal</p>
-											</a>
-										  </li>
-										  <li>
-											<a data-edit="fontSize 1">
-											  <p style="font-size:11px">Small</p>
-											</a>
-										  </li>
-										</ul>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn" data-edit="bold" title="Bold (Ctrl/Cmd+B)"><i class="fa fa-bold"></i></a>
-										<a class="btn" data-edit="italic" title="Italic (Ctrl/Cmd+I)"><i class="fa fa-italic"></i></a>
-										<a class="btn" data-edit="strikethrough" title="Strikethrough"><i class="fa fa-strikethrough"></i></a>
-										<a class="btn" data-edit="underline" title="Underline (Ctrl/Cmd+U)"><i class="fa fa-underline"></i></a>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn" data-edit="insertunorderedlist" title="Bullet list"><i class="fa fa-list-ul"></i></a>
-										<a class="btn" data-edit="insertorderedlist" title="Number list"><i class="fa fa-list-ol"></i></a>
-										<a class="btn" data-edit="outdent" title="Reduce indent (Shift+Tab)"><i class="fa fa-dedent"></i></a>
-										<a class="btn" data-edit="indent" title="Indent (Tab)"><i class="fa fa-indent"></i></a>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn" data-edit="justifyleft" title="Align Left (Ctrl/Cmd+L)"><i class="fa fa-align-left"></i></a>
-										<a class="btn" data-edit="justifycenter" title="Center (Ctrl/Cmd+E)"><i class="fa fa-align-center"></i></a>
-										<a class="btn" data-edit="justifyright" title="Align Right (Ctrl/Cmd+R)"><i class="fa fa-align-right"></i></a>
-										<a class="btn" data-edit="justifyfull" title="Justify (Ctrl/Cmd+J)"><i class="fa fa-align-justify"></i></a>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn dropdown-toggle" data-toggle="dropdown" title="Hyperlink"><i class="fa fa-link"></i></a>
-										<div class="dropdown-menu input-append">
-										  <input class="span2" placeholder="URL" type="text" data-edit="createLink" />
-										  <button class="btn" type="button">Add</button>
-										</div>
-										<a class="btn" data-edit="unlink" title="Remove Hyperlink"><i class="fa fa-cut"></i></a>
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn" title="Insert picture (or just drag & drop)" id="pictureBtn"><i class="fa fa-picture-o"></i></a>
-										<input type="file" data-role="magic-overlay" data-target="#pictureBtn" data-edit="insertImage" />
-									  </div>
-				  
-									  <div class="btn-group">
-										<a class="btn" data-edit="undo" title="Undo (Ctrl/Cmd+Z)"><i class="fa fa-undo"></i></a>
-										<a class="btn" data-edit="redo" title="Redo (Ctrl/Cmd+Y)"><i class="fa fa-repeat"></i></a>
-									  </div>
-									</div>
-				  
-									<div id="editor-one" class="editor-wrapper"></div>
-				  
-									<textarea name="descr" id="descr" style="display:none;"></textarea>
-									
-									<br />
-									<label>Member Organizations*:</label>
-									<br />
-									<div class="col-md-6 col-sm-12 col-xs-12 form-group has-feedback">
-										<input type="text" class="form-control has-feedback-left" id="inputSuccess2" placeholder="Search Member">
-										<span class="fa fa-search form-control-feedback left" aria-hidden="true"></span>
-									</div>
-									<div class="col-md-6 col-sm-12 col-xs-12 form-group has-feedback">
-									<button type="button" class="btn btn-primary">Add Member</button>
-									</div>
-									<div class="x_content">
-
-											<p>Search member and add them to the table</p>
-	
-											<div class="table-responsive">
-												<table class="table table-striped jambo_table bulk_action">
-													<thead>
-														<tr class="headings">
-															<th>
-																<input type="checkbox" id="check-all" class="flat">
-															</th>
-															<th class="column-title">Org.Member No </th>
-															<th class="column-title">Organization Name </th>
-															<th class="column-title">Role in Coalition </th>
-															<th class="column-title no-link last"><span class="nobr">Action</span>
-															</th>
-															<th class="bulk-actions" colspan="7">
-																<a class="antoo" style="color:#fff; font-weight:500;">Bulk Actions ( <span class="action-cnt"> </span> ) <i class="fa fa-chevron-down"></i></a>
-															</th>
-														</tr>
-													</thead>
-	
-													<tbody>
-														<tr class="even pointer">
-															<td class="a-center ">
-																<input type="checkbox" class="flat" name="table_records">
-															</td>
-															<td class=" ">121000040</td>
-															<td class=" ">May 23, 2014 11:47:56 PM </td>
-															<td class=" ">121000210 <i class="success fa fa-long-arrow-up"></i></td>
-															<td class=" last"><a href="#">View</a>
-															</td>
-														</tr>
-														<tr class="odd pointer">
-															<td class="a-center ">
-																<input type="checkbox" class="flat" name="table_records">
-															</td>
-															<td class=" ">121000039</td>
-															<td class=" ">May 23, 2014 11:30:12 PM</td>
-															<td class=" ">121000208 <i class="success fa fa-long-arrow-up"></i>
-															</td>
-															<td class=" last"><a href="#">View</a>
-															</td>
-														</tr>
-														<tr class="even pointer">
-															<td class="a-center ">
-																<input type="checkbox" class="flat" name="table_records">
-															</td>
-															<td class=" ">121000038</td>
-															<td class=" ">May 24, 2014 10:55:33 PM</td>
-															<td class=" ">121000203 <i class="success fa fa-long-arrow-up"></i>
-															</td>
-															<td class=" last"><a href="#">View</a>
-															</td>
-														</tr>
-														<tr class="odd pointer">
-															<td class="a-center ">
-																<input type="checkbox" class="flat" name="table_records">
-															</td>
-															<td class=" ">121000037</td>
-															<td class=" ">May 24, 2014 10:52:44 PM</td>
-															<td class=" ">121000204</td>
-															<td class=" last"><a href="#">View</a>
-															</td>
-														</tr>
+	<div id="step-11">
+		<h2 class="StepTitle">Step 1 Content</h2>
+		<form class="form-horizontal form-label-left">
 
 
-
-															
-														</tr>
-													</tbody>
-												</table>
-											</div>
-								
-							
-										</div>
-
-
-									<div class="ln_solid"></div>
-									<div class="form-group">
-											<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
-												
-											 	<button type="button" class="btn btn-primary">Cancel</button>
-									    		<button class="btn btn-primary" type="reset">Reset</button>
-												<button id="saveContact" class="btn btn-success">Submit</button>
-											</div>
-										</div>
-								  </div>
-								</div>
-									</form>
-											</div>
-							</div>
+			<div class="form-group">
+				<label class="control-label col-md-3 col-sm-3" for="first-name">First Name <span class="required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" id="first-name2" required="required" class="form-control col-md-7 col-xs-12">
 				</div>
-			 </div>
 			</div>
-			
-			
-<!-- End of Page content -->
+			<div class="form-group">
+				<label class="control-label col-md-3 col-sm-3" for="last-name">Last Name <span class="required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-6">
+					<input type="text" id="last-name2" name="last-name" required="required" class="form-control col-md-7 col-xs-12">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="middle-name" class="control-label col-md-3 col-sm-3">Middle Name / Initial</label>
+				<div class="col-md-6 col-sm-6">
+					<input id="middle-name2" class="form-control col-md-7 col-xs-12" type="text" name="middle-name">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3 col-sm-3">Gender</label>
+				<div class="col-md-6 col-sm-6">
+					<div id="gender2" class="btn-group" data-toggle="buttons">
+						<label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+							<input type="radio" name="gender" value="male"> &nbsp; Male &nbsp;
+						</label>
+						<label class="btn btn-primary" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
+							<input type="radio" name="gender" value="female" checked=""> Female
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-md-3 col-sm-3">Date Of Birth <span class="required">*</span>
+				</label>
+				<div class="col-md-6 col-sm-6">
+					<input id="birthday2" class="date-picker form-control col-md-7 col-xs-12" required="required" type="text">
+				</div>
+			</div>
 
-                <!-- jQuery -->
-    
-    <!-- Custom Theme Scripts -->
-    <script src="../js/coalition.js"></script>
-               
-                <!-- Custom Theme Scripts -->
-              
-			</body>
-          </html>
+		</form>
+	</div>
+	<div id="step-22">
+		<h2 class="StepTitle">Step 2 Content</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+	<div id="step-33">
+		<h2 class="StepTitle">Step 3 Content</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</div>
+	<div id="step-44">
+		<h2 class="StepTitle">Step 4 Content</h2>
+		<p>Lorem ipsumnnnnn dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+			Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+			in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	
+	</div>
+</div>
+<!-- End SmartWizard Content -->
+
+<!-- /page content -->
+
+<!-- footer content -->
+<footer>
+<div class="pull-right">
+Gentelella - Bootstrap Admin Template by <a href="https://colorlib.com">Colorlib</a>
+</div>
+<div class="clearfix"></div>
+</footer>
+<!-- /footer content -->
+</div>
+</div>
+
+ 
+ 
+<script src="../js/coalition.js"></script>
+
+
