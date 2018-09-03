@@ -37,6 +37,10 @@ $(document).ready(function() {
 			  className: "btn-sm"
 			},
 			{
+			  extend: "csv",
+			  className: "btn-sm"
+			},
+			{
 			  text: "Delete",
 			  className: "btn-sm btn-danger"
 			}
