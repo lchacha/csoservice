@@ -1,0 +1,33 @@
+# save this directory
+cDir=`pwd`
+ls
+# navigate to the given homework
+scriptDir=`echo ../$1`
+
+# now in the specific scripts
+cd $scriptDir
+
+# create a tar 
+tar cf autograde.tar gradeProgram $1_env helperFunctions studentDirs ./src ./dataFiles
+
+# move the tar file here
+mv autograde.tar $cDir
+
+# copy the Makefile here
+cp autograde-Makefile $cDir
+
+# cd back here
+cd $cDir
+ls
+# run the make file
+mv autograde-Makefile Makefile
+
+make
+# delete all created files except the handin.zip file and the output file
+shopt -s extglob
+rm -rv !("handin.zip"|"tester"|"clean") >/dev/null 2>&1
+echo "*************** DONE ****************"
+
+
+
+

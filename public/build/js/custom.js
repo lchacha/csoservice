@@ -965,6 +965,7 @@ if (typeof NProgress != 'undefined') {
 			  validateFront();
 			});
 			var validateFront = function() {
+			  console.log("in validate front")
 			  if (true === $('#demo-form').parsley().isValid()) {
 				$('.bs-callout-info').removeClass('hidden');
 				$('.bs-callout-warning').addClass('hidden');
@@ -1817,11 +1818,11 @@ if (typeof NProgress != 'undefined') {
       });
 
       $('form').submit(function(e) {
-        e.preventDefault();
         var submit = true;
 
         // evaluate the form using generic validaing
         if (!validator.checkAll($(this))) {
+	  
           submit = false;
         }
 
@@ -5037,8 +5038,8 @@ if (typeof NProgress != 'undefined') {
 		init_knob();
 		init_IonRangeSlider();
 		init_ColorPicker();
-		init_TagsInput();
-		init_parsley();
+	        // init_TagsInput();
+		 init_parsley();
 		init_daterangepicker();
 		init_daterangepicker_right();
 		init_daterangepicker_single_call();
@@ -5062,32 +5063,5 @@ if (typeof NProgress != 'undefined') {
 		init_autosize();
 		init_autocomplete();
 				
-	});	
-	$(document).ready(function() {
-	
-		var table = $('#datatable-buttons').DataTable();
-		console.log("blncskdcmsdc ") 
-		table.button().add( 0, {
-			action: function ( e, dt, button, config ) {
-			dt.ajax.reload();
-			},
-			className: "btn btn-sm btn-primary",
-			text: 'Add new'
-	//		editor: myeditor
-		} );
-		table.button().add( 1, {
-			action: function ( e, dt, button, config ) {
-			dt.ajax.reload();
-			},
-			className: "btn btn-sm",
-			text: 'Edit'
-		} );
-		table.button().add( 5, {
-			action: function ( e, dt, button, config ) {
-				dt.ajax.reload();
-			},
-			className: "btn btn-sm btn-danger",
-			text: 'Delete'
-		} );
 	});	
 

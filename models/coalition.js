@@ -25,7 +25,7 @@ class Coalition {
 	
 	// Gets all records of organizations from DB
 	getAllCoalition(error, success){
-		db.query(`SELECT * from organization`, (err, res) => {
+		db.query(`SELECT workingGroupName as name, convener as conv, wgProfile as details, memberOrganization[1:2][1:1]  as members FROM  workingroup`, (err, res) => {
 			if(err)
 			{	
 				error(err)

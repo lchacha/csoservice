@@ -1,0 +1,111 @@
+            <!DOCTYPE html>
+            <html lang="en">
+              <head>
+                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+                <!-- Meta, title, CSS, favicons, etc. -->
+                <meta charset="utf-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport">
+
+              </head>
+<!-- page content -->
+			<body class="nav-md">
+   				 <div class="container body">
+   					   <div class="main_container">
+	   						<div class="row">
+								<div class="col-md-12 ">
+									<div class="x_panel">
+									<div class="x_content">
+                  						<div class="x_title">     
+										  <h2 id='titleText'>Add New Contact<small>Enter Persons Details</small></h2>
+                  				
+                				    <div class="clearfix"></div>
+										</div>
+                				       <div class="x_content">
+										   <form id="upload"  method="POST" enctype="multipart/form-data"  >
+                                           <input type="file" id="myfile" name="people.csv" class="btn btn-primary">
+                                           <input type="submit" id="submit" name="submit" value="Bulk upload" ><span>Use format in </span><a href="#">sample.csv</a>
+                                           </form>
+                                               <form id="demo-form" data-parsley-validate class="form-horizontal form-label-left" id='newPerson' >
+											
+										<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback"></div>
+											<label>Personal Details:</label>
+											  <br />
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control has-feedback-left parsley-success"  required="required" id="inputSuccess1" placeholder=" Dr./Prof./Mr./Mrs.">
+											<span class="fa fa-globe form-control-feedback left required" aria-hidden="true"></span>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<label>Gender*:</label>
+											<p>Male:
+											<input type="radio" class="flat" name="gender" id="genderM" value="Male"  data-parsley-mincheck="1"  required /> 
+												Female:
+											<input type="radio" class="flat" name="gender" id="genderF" value="Female" />
+												Other:
+											<input type="radio" class="flat" name="gender" id="genderO" value="Other" />
+											</p>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control has-feedback-left" id="inputSuccess2"  required="required" placeholder="First Name">
+											<span class="fa fa-user form-control-feedback left required" aria-hidden="true"></span>
+										</div>
+							
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control" id="inputSuccess3" required="required" placeholder="Last Name">
+											<span class="fa fa-user form-control-feedback right required" aria-hidden="true"></span>
+										</div>	
+										<div class="col-md-12 col-sm-12 col-xs-12 form-group has-feedback">
+					 						<label>Organizational Details:</label>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="email" class="form-control has-feedback-left" id="inputSuccess4" required="required" placeholder="Email">
+											<span class="fa fa-envelope form-control-feedback left " aria-hidden="true"></span>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control" id="inputSuccess5"  required="required" placeholder="Phone">
+											<span class="fa fa-phone form-control-feedback right" aria-hidden="true"></span>
+										</div>
+										<div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control has-feedback-left" id="inputSuccess6" required="required" placeholder="Organization">
+											<span class="fa fa-globe form-control-feedback left" aria-hidden="true"></span>
+										</div>
+								        <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control" id="inputSuccess7"  required="required" placeholder="Department">
+											<span class="fa fa-home form-control-feedback right" aria-hidden="true"></span>
+										</div>
+									    <div class="col-md-6 col-sm-6 col-xs-12 form-group has-feedback">
+											<input type="text" class="form-control " id="inputSuccess8"  required="required" placeholder="Job Title/Position">
+											<span class="fa fa-user-plus form-control-feedback right" aria-hidden="true"></span>
+										</div>
+											  
+											   <div class="ln_solid"></div>
+										<div class="form-group">
+											<div class="col-md-9 col-sm-9 col-xs-12 col-md-offset-3">
+												
+											 	<button type="button" class="btn btn-primary">Cancel</button>
+									    		<button class="btn btn-primary" type="reset">Reset</button>
+												<button  type="submit"  id="saveContact" class="btn btn-success">Submit</button>
+											</div>
+										</div>
+									     
+							      </form>
+							           </div>
+									</div>
+								</div>
+								</div>
+						   </div>
+					 </div>
+				 </div>
+						 
+						   
+									
+										
+							
+
+<!-- End of Page content -->
+                   <script src="../js/addperson.js"></script>
+           
+                <!-- Custom Theme Scripts -->
+              	
+			</body>
+          </html>

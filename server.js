@@ -17,6 +17,11 @@ var server = require('http').Server(app);
 
 require('dotenv').config();
 
+var bodyParser = require('body-parser')
+
+var multer = require('multer')
+
+
 //const flash = require('connect-flash')
 
 //var owasp = require('owasp-password-strength-test')
@@ -40,12 +45,11 @@ app.set('view engine', 'pug');
 app.use(express.static(path.join(__dirname, './public')));
 
 
-
-
-
 app.use(function(err, req, res, next) {
     console.log("error  : ",err);
 });
+
+app.use(bodyParser.json())
 
 /* DO NOT TOUCH ABOVE THIS */
 
@@ -92,21 +96,45 @@ app.get('/orgform', function(req, res, next){
 
 
 /* DO NOT TOUCH BELOW THIS */
+var storage = multer.diskStorage({
+	destination: function( req, file, cb){
+		cb(null, 'uploads/')
+	},
+	filename: function (req, file, cb){
+		cb(null, file.fieldname + '-' + Date.now())
+	}
+})
+
+var upload = multer({ storage: storage })
 
 // Start the database, confirm that it is up and then start the server for the application
 var organization = require("./controllers/organizationController.js") 
 var person = require("./controllers/personController.js")
 var WorkingGroup = require("./controllers/coalitionController.js")
+var type = upload.single('people.csv')
 
+app.post('/upload/:person', type, (req,res,next) => {
+	prs = new person()
+	if (req.file.path){
+		console.log(req.file.path)
+		res.send("upload successful")
+		prs.bulkUpload(req.file.path, function(err){
+			next(err)		
+		}, function(success){
+			res.send("done uploading")
+		})
+	}
+	console.log("uploader here")
+	next("error")
+})
 
 app.post('/entity/:type', (req,res,next) => {
 	var type = req.params.type
 
 	if (type == "organization")
 	{
-		
 		newOrg = new organization()
-		newOrg.saveOrganization("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17", "18","19", function(err){
+		newOrg.saveOrganization(req.body.name, req.body.nature, req.body.nickname, req.body.orgEmail, req.body.ceoDirEmail, req.body.commdeptEmail, req.body.landline, req.body.mobile1, req.body.mobile2, req.body.street, req.body.building, req.body.gps, req.body.website, req.body.twitter, req.body.facebook, req.body.instagram, req.body.flickr, req.body.pinterest, req.body.whatsapp, function(err){
 			console.log("error occured")
 			next(err)
 		},
@@ -117,9 +145,10 @@ app.post('/entity/:type', (req,res,next) => {
 	
 	}
 	if (type == "person")
-	{
+	{	
+		console.log(req.body.title)
 		newPerson = new person()
-		newPerson.savePerson("Mr", "Lenah", "Chacha", " Female", "blablabla", "Eating", "coodinator", "lenah.chacha@gmail.com", "+254 123456789", function(err){
+		newPerson.savePerson(req.body.title, req.body.fname, req.body.sname, req.body.gender, req.body.org, req.body.dept, req.body.jtitle, req.body.orgemail, req.body.phone, function(err){
 			console.log(err)
 			next(err)
 		},
@@ -131,8 +160,8 @@ app.post('/entity/:type', (req,res,next) => {
 	if (type == "workingGroup")
 	{
 		wg = new WorkingGroup()
-		members = "{ICJ, Host}"
-		wg.saveCoalition("bla", "bla", "bla", members, function(err){
+		members = '{{"ICJ", "Host"},{"Kenya Lab", "Secretary"}}'
+		wg.saveCoalition("Police Reforms ", "Harry Bovic", "We do super hero stuff. Wait how old are you? 3 years? no nono ... I was thinking one.. is that valid", members, function(err){
 			console.log("error saving coalition")
 			next(err)
 		}, function(success){
@@ -160,7 +189,7 @@ app.get('/coalition', (req, res, next) => {
 			next(err)
 		}, function(success){
 			console.log(success)
-			res.send(success)
+			res.send(success.rows)
 		})
 })
 
@@ -178,7 +207,7 @@ app.get('/person', (req, res, next) => {
  var db = require("./middleware/connectdb.js")
 
 app.get('/helper', (req,res,next) => {
-	db.query(`DROP TABLE workingroup`, (err, rows) => {
+	db.query(`DROP TABLE person`, (err, rows) => {
 		if(err)
 			console.log(err)
 
@@ -187,6 +216,7 @@ app.get('/helper', (req,res,next) => {
 	
 	
 })
+
 
 
 app.get('/create', (req,res,next) => {

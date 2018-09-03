@@ -53,7 +53,14 @@ class Organization {
 	// Adds an Organization to the database
 	// TO-DO: Use prepared Statements
 	saveOrganization(error, success){
-			db.query(`INSERT INTO Organization(name, nature, nickname, organizationEmail, ExecutiveEmail, CommunicationEmail, landlineNumber, mobileNumber, streetAddress, BuildingAddress, websiteAddress, twitterAddress,  facebook, instagram, flickr, pinterest, whatsapp) VALUES('${this.orgName}', '${this.orgDetails}', '${this.shortName}', '${this.orgEmail}', '${this.ceoEmail}', '${this.commDeptEmail}', '${this.landline}', '{${this.mobile1} , ${this.mobile2}}' , '${this.addressStreet}' , '${this.addressBuilding}', '${this.website}' , '${this.twitter}',  '${this.facebook}' , '${this.instagram}',  '${this.flickr}','$this.pinterest}', '${this.whatsapp}')`, (err, res) =>     {
+			var mobile=""
+			if(this.mobile2){
+				mobile =[this.mobile1 , this.mobile2]
+				console.log(mobile)
+			}else
+				mobile =[this.mobile1] 
+
+			db.query(`INSERT INTO Organization(name, nature, nickname, organizationEmail, ExecutiveEmail, CommunicationEmail, landlineNumber, mobileNumber, streetAddress, BuildingAddress, websiteAddress, twitterAddress,  facebook, instagram, flickr, pinterest, whatsapp) VALUES('${this.orgName}', '${this.orgDetails}', '${this.shortName}', '${this.orgEmail}', '${this.ceoEmail}', '${this.commDeptEmail}', '${this.landline}', '{${mobile}}' , '${this.addressStreet}' , '${this.addressBuilding}', '${this.website}' , '${this.twitter}',  '${this.facebook}' , '${this.instagram}',  '${this.flickr}','$this.pinterest}', '${this.whatsapp}')`, (err, res) =>     {
  		if (err) {
 			console.log("error in model")
 			 error(err)
