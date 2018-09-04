@@ -107,6 +107,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
+
 // Start the database, confirm that it is up and then start the server for the application
 var organization = require("./controllers/organizationController.js") 
 var person = require("./controllers/personController.js")
