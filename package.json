@@ -28,8 +28,8 @@
     "raw-body": "^2.3.3",
     "redis": "^2.6.5",
     "serve-spa": "1.1.1",
-    "socket.io": "1.7.3",
-    "socket.io-client": "1.7.3",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
     "statuses": "^1.5.0"
   },
   "devDependencies": {
