@@ -27,27 +27,50 @@ var axios  = require('axios')
 
 //var owasp = require('owasp-password-strength-test')
 // ALL GET routes go here
-IPADDRESS = "127.0.0.1"
 PORT = process.env.PORT || 8000
 
 //var router = express.Router();
 
 
-app.set('views', __dirname + '/views/production');
+//app.set('views', __dirname + '/views/production');
 
-app.set('view engine', 'pug');
+//app.set('view engine', 'pug');
 
 // Backend Server address
-var server = process.env.BKEND_server_url
+//var server = process.env.BKEND_server_url
 
 
 app.use(express.static(path.join(__dirname, './public')));
 
+var organization = require('./routes/organization/organization')
 
 
-app.get('/', (req,res) => {
-	
-})
+app.use('/organisations', organization)
+
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: {}
+    });
+});
 
 // route to Get all persons from DB
 // Enties in back end
@@ -61,17 +84,15 @@ app.get('/', (req,res) => {
 app.get('/persons', (req, res) =>{
 	console.log(server+'/persons')
 	axios.get(server +'/persons')
-	.then(response => {
-		console.log(response.data)
-		res.status(200).send(response.data)
-	})
-	.catch( error => {
-		res.status(400).send({"message": "Server Error"})
-	})
+		.then(response => {
+			console.log(response.data)
+			res.status(200).send(response.data)
+		})
+		.catch( error => {
+			res.status(400).send({"message": "Server Error"})
+		})
 })
 
+
 // Start the server running on port 3000 locally
-
-
-
 app.listen(PORT, () => console.log(`Frontend application listening on port ${PORT}!`))
