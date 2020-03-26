@@ -22,7 +22,10 @@
             console.log(cvb.get('search'))
             axios.post("/organizations/data/search", cvb)
                 .then( response => {
-                    console.log(response.data)
+                    
+                     var table = "<table class='table' id='#organizationstable'></table>"
+                      
+                      $('.dataresults').html(table)
                     renderTable(response.data)
                     // Render the data into a table
                    
@@ -80,27 +83,29 @@ function getField (sample){
 function renderTable(data){
    
     try{
-          $('#organizationstable').DataTable( {
+         
           
-        
-          //dom: 'Bfrtip',
-          /*buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print', 
-            ],*/
-          // "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]],
-          "data": data.data,
-          "columns":[
-            {"data" : "organizationname",
-                "fnCreatedCell": function(nTd, sData, oData, iRow, iCol){
-					$(nTd).html("<a data-toggle='tooltip' title='View organization ' href='/organizations/"+ oData.Organisation_acronym+"/"+ oData.id +"'>"+oData.organizationname+"</a>")
-				}},
-			{"data": "organization_mandate"},
-			{"data": "created_at"}
-		  ]
+          $('div.dataresults > table').DataTable( {
+         
+              "data": data.data,
+              "columns":[
+                {"title": "Organization Name",
+                 "data" : "organizationname",
+                    "fnCreatedCell": function(nTd, sData, oData, iRow, iCol){
+					    $(nTd).html("<a data-toggle='tooltip' title='View organization ' href='/organizations/"+ oData.Organisation_acronym+"/"+ oData.id +"'>"+oData.organizationname+"</a>")
+				    }},
+			    { "title": "Mandate",
+                 "data": "organization_mandate"},
+			    {"title": "Joined on",
+                 "data": "created_at"}
+		      ],
+              "language": {
+                  "emptyTable": "No data found of search term"
+                }
           
             
         } );
-        $('input').classList.add('form-control')
+        //$('input').classList.add('form-control')
 	}
     catch( error){
         console.log(error)
