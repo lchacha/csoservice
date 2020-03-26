@@ -66,7 +66,7 @@ app.use('/organizations', organization)
 
 
 app.get("/", (req, res) => {
-    res.render("layout")
+    res.render("home")
 })
 // error handlers
 

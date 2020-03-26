@@ -1,5 +1,20 @@
 extends layout
+block activenavs
+    nav.nav
+        a.nav-link#organization-link.active(data-placement="right"  data-original-title="ORGANIZATIONS" title data-toggle="tooltip-custom" href="#organizations")
+            span.fa.fa-phone.fa-2x.feather.feather-package.align-self-center.menu-icon.icon-dual(height="24px" width="24px")
 
+block menus
+    div.main-icon-menu-pane.mm-active.active#organizations
+        div.titlebox
+            h6.menu_title ORGANIZATIONS
+        ul.nav.metismenu.mm-show
+            li.nav-item.indent 
+                a.fa.fa-search.nav-link(href="/organizations/search")
+                    | Search
+            li.nav-item.indent
+                a.fa.fa-plus.nav-link(href="/organizations/new")
+                    | Add new
 block content
     .row
         .col-md-12
