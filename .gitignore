@@ -16,4 +16,5 @@ public/LICENSE.txt
 public/package.json
 public/README.md
 vs/
+.env
 
