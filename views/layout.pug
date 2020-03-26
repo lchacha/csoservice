@@ -1,0 +1,80 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='icon' href='images/favicon.ico' type='image/ico')
+    title #{title}
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(href='/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet')
+   
+    link(href='/css/style.css' rel='stylesheet')
+    link(href='/css/index.css' rel='stylesheet')
+    link(href='/css/metisMenu.min.css' rel='stylesheet')
+
+    block headerScripts
+body
+    div.topbar
+        div.topbar-left
+            div.left_col.scroll-view.cntainermain
+                div.navbar.nav_title(style='border: 0;')
+                    a.logo(href='/')
+                        img(src="/images/favicon.png" style="width:auto; height:30px; ")
+                        strong CSO Services
+            div.clearfix
+        div.navbar-custom
+            ul.list-unstyled.topbar-nav.float-right.mb-0
+                li
+                    a.nav-link.dropdown-toggle.wavea-effect.waves-light.nav-user(href='javascript:;' data-toggle='dropdown' aria-expanded='false')
+                        img(src='/images/favicon.png' alt='' style="width:auto; height:30px; ")
+                        | welcome, 
+                        small= username
+                        span.fa.fa-angle-down
+                    ul.dropdown-menu.dropdown-menu-right
+                        li.dropdown-item
+                            a(href='/organizations/profile')  Profile
+                        li.dropdown-item
+                            a(href='javascript:;')
+                                span.badge.bg-red.pull-right 50%
+                                span Settings
+                        li.dropdown-item
+                            a(href='javascript:;') Help
+                        li.dropdown-item
+                            a(href='login.html')
+                                i.fa.fa-sign-out.pull-right
+                                    |  Log Out
+                
+            ul.list-unstyled.topbar-nav.mb-0
+                li
+                    button.button-menu-mobile.nav-link.waves-effect.waves-light
+                        i.fa.fa-bars.fa-2x.dripicons-menu.nav-icon
+                  
+                
+                   
+    // sidebar menu
+    div.page-wrapper
+        div.left-sidenav
+            div.main-icon-menu
+                block activenavs
+                
+            div.main-menu-inner
+                div.slimScrollDiv( style="position: relative; overflow: hidden; width: auto; height: 363px;")
+                    div.menu-body.slimscroll( style="overflow: hidden; width: auto; height: 363px;")
+                        block menus
+                        
+        
+        div.page-content
+            block content
+        
+        
+   
+// jQuery
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+// Bootstrap
+script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+script(src="https://unpkg.com/axios/dist/axios.min.js")
+script(src='/js/index.js')
+block scripts

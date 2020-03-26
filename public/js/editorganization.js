@@ -22,7 +22,8 @@
             //$('#organization')
             
             $('#error-bar').html("")
-			axios.post("/organizations", cvb)
+            var id = $(".page-title").data("id")
+			axios.put("/organizations/"+ id, cvb)
                 .then( response => {
                     alert(response.data.message)
 			    })
@@ -32,7 +33,8 @@
                     //var inputs =  var element = document.getElementsByClassName('form-control');
                     $('input').removeClass('is-invalid')
                     let errors = error.response.data.errors
-                    for ( var err in errors){
+                    if ( Array.isArray(error)){
+                        for ( var err in errors){
                         console.log(errors[err])
                            for ( var key in errors[err])
                            {
@@ -48,8 +50,13 @@
                              
                              //$('#error-bar').append("<div class='alert alert-danger' role='alert'>" + errors[err][key] + "</div>");
 					       }
-                         
-				    }
+                    }   
+				    }else{
+                        console.log(error)
+                        $('#error-bar').append("<div class='alert alert-danger' role='alert'>" + error + "</div>");
+					}
+					
+                    
                
 			    })
 			
@@ -67,4 +74,14 @@ $(document).ready(function() {
 
     // Get the organization details 
 
+    $('#edit').click( (e)=>{
+        console.log("EDIT clicked")
+        $('input').prop('disabled', false);
+
+        //Disable this field and enable Saves
+        var but = $(this).target
+
+        document.getElementById("edit").classList.add('display')
+        $("#update").removeClass('display')
+	})
 })

@@ -1,0 +1,79 @@
+extends layout
+
+block headerScripts
+    link(href='//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css' rel='stylesheet')
+
+block activenavs
+    nav.nav
+        a.nav-link.active#organization-link(data-placement="right"  data-original-title="ORGANIZATIONS" title data-toggle="tooltip-custom" href="#organizations")
+            span.fa.fa-phone.fa-2x.feather.feather-package.align-self-center.menu-icon.icon-dual(height="24px" width="24px")
+
+block menus
+    div.main-icon-menu-pane.mm-active.active#organizations
+        div.titlebox
+            h6.menu_title ORGANIZATIONS
+        ul.nav.metismenu.mm-show
+            li.nav-item.indent 
+                a.active.fa.fa-search.nav-link(href="/organizations/search")
+                    | Search
+            li.nav-item.indent
+                a.fa.fa-plus.nav-link(href="/organizations/new")
+                    | Add new
+block content
+    .row
+        .col-md-12
+            .page-title-box
+                .float-right(stle="padding-left:10px")
+                    
+                h4.page-title
+                    | Organizations
+                    
+                
+                
+    .row
+        .col-md-12
+            form#neworg.form-horizontal.form-label-left.input_mask.needs-validation( enctype='multipart/form-data' )
+                .form-group.row
+                    label.col-sm-1.col-form-label(for="search") Search
+                    div.col-sm-4
+                        input.form-control#search(type="text" name="search" placeholder="Search by organization name..." min="3" required) 
+                        div.invalid-feedback 
+                            | Error in search
+                    div.col-sm-2
+                        button.btn.btn-secondary(type="submit") GO
+                    
+    div.row
+        div.col-12#error-bar
+    .col-md-12
+        div.card
+            div.card-body 
+                table.table#organizationstable
+                    thead
+                        tr
+                            th
+                                | Organization Name
+                            th
+                                | Organization Mandate
+                            th
+                                | Joined on
+                                
+                                       
+
+                                
+                        
+                        
+    // End of Page content
+    // Custom Theme Scripts
+
+block scripts
+    script(src='/js/organizations.js')
+    script(src=' https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js')
+    //script(src='  https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js')
+    //script(src=' https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js')
+    //script(src=' https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')
+    //script(src=' https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js')
+    //script(src=' https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js')
+    //script(src=' https://cdn.datatables.net/buttons/1.6.1/js/buttons.html5.min.js')
+    //script(src=' https://cdn.datatables.net/buttons/1.6.1/js/buttons.print.min.js')
+
+   

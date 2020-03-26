@@ -1,9 +1,15 @@
 {
   "ExpandedNodes": [
     "",
-    "\\middleware",
-    "\\test"
+    "\\controllers",
+    "\\public",
+    "\\public\\css",
+    "\\routes",
+    "\\routes\\organization",
+    "\\test",
+    "\\views",
+    "\\views\\production"
   ],
-  "SelectedNode": "\\package.json",
+  "SelectedNode": "\\routes\\organization\\organization.js",
   "PreviewInSolutionExplorer": false
 }

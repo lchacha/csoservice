@@ -1,25 +1,12 @@
 const org = require('express').Router()
 
-require('dotenv').config();
-var axios = require('axios')
+const organization = require("../../controllers/organizationController")
+const multer = require("multer")
 
-var config = {
-	headers: {
-		'content-type': 'application/json'
-	}
-}
+upload = multer()
 
-var params = {
-	"Full_Name_Of_Organization": "Kenyan Section of the ICJ",
-	"organization_email": "compsafrica@gmail.com" ,
-	"phone_number_1": "+245000000000",
-	"mandate_of_organization": "Human rights, the rule of Law and Democracy",
-	"organisation_acronym": "ICJ Kenya",
-	"phone_number_2": "+2541111111",
-	"Organization_Location": {"street": "Laikipia Rd"},
-	"organization_social_media_details": [{ "Facebook": "@ICJ.Kenya"}]
+const { searchSanitizer, organizationValidationRules, validate }= require('../../middleware/inputValidator.js')
 
-}
 
 /*
 Data Routes 
@@ -27,38 +14,125 @@ Data Routes
 */
 
 org.get('/', (req, res) => {
-	axios.get(process.env.BKEND_server_url +'/organisations')
-		.then(response => {
-			console.log(response.data)
-			res.status(200).send(response.data)
-		})
-		.catch( error => {
-			res.status(400).send({"message": "Server Error"})
-		})
-})
+	orga = new lmlm()
 
-
-org.post('/', (req, res) => {
-	axios.post(process.env.BKEND_server_url +'/organisations', params, config)
+	orga.all()
 		.then(response => {
 			console.log(response.data)
 			res.status(200).send(response.data)
 		})
 		.catch( error => {
 			console.log(error)
-			res.status(400).send({"message": "Server Error"})
+			res.status(401).send(error)
+		})
+	
+
+})
+
+
+org.post('/',  upload.none(), organizationValidationRules(), validate , (req, res, next) => {
+	
+	var org = new organization()
+	org.createOne(req)
+		.then( response =>{
+			
+			res.status(201).json({data: response.data, message: "Organization has been Saved"})
+		})
+		.catch( error => {
+			
+			let errors = [{message: "Internal Server Error"}]
+			
+			res.status(500).json({errors: errors})
+		})
+		
+
+})
+
+org.put('/:organization_id',  upload.none(), organizationValidationRules(), validate , (req, res, next) => {
+	
+	var org = new organization()
+	
+	org.updateOne(req.params.organization_id, req, )
+		.then( response =>{
+			
+			res.status(201).json({data: response.data, message: "Organization has been updated"})
+		})
+		.catch( error => {
+			
+			let errors = [{message: "Internal Server Error"}]
+			
+			res.status(500).json(error)
+		})
+		
+
+})
+
+org.delete("/:id", (req, res) => {
+	orga = new lmlm()
+	orga.deleteOne()
+		.then(response => {
+			res.status(200).json({data: response.data, message: "Organization has been Deleted"})
+		})
+		.catch( error => {
+			console.log(error)
+			res.status(400).send(error)
 		})
 })
 
-// serve html pages
-org.get('/all', ( req, res) =>
+org.post("/data/search", upload.none(), searchSanitizer(), validate, (req, res, next) =>{
+	
+	var org = new organization()
+	org.search(req)
+		.then( response =>{
+			console.log(response.data.length)
+			res.status(200).json({data: response.data, message: "Organization found"})
+		})
+		.catch( error => {
+			
+			let errors = [{message: "Internal Server Error"}]
+			
+			res.status(422).json({errors: errors})
+		})
+})
+/*---------------------------------------------------------------------
+
+serve html pages
+
+-----------------------------------------------------------------------*/
+org.get('/search', ( req, res) =>
 {
-	res.send("On organzations home page")
+	res.render("allorganizations", {
+			username: "Org_x",
+			title : "Organizations - CSO Service"
+	})
+})
+org.get('/new', (req, res) =>
+{
+	res.render("addOrganization",{
+		username: "Org_x",
+		title : "Profile - CSO Service",
+		page_title: "Add New Organization"
+	})
 })
 
-org.get('/new_organization', (req, res) =>
-{
-	res.send(" age to add a new organization")
+org.get('/:nickname/:id', (req, res) =>{
+	
+	var org = new organization()
+	org.getOne(req.params.id, req)
+	.then(response => {
+		res.render("editOrganization", {
+			username: "Org_x",
+			title : response.data.Organisation_acronym +  " - CSO Service",
+			page_title: response.data.organizationname,
+			organization: response.data
+		})
+	})
+	.catch(error =>{
+		let errors = [{message: "Internal Server Error"}]
+			
+		res.status(422).json({errors: errors})
+	})
+	
 })
 
 

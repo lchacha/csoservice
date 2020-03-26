@@ -1,49 +1,6 @@
-var contactEditor;
-var table
-var appName = ""
-// Functions
-
-
-function getPage(pageReference){
-	$.ajax({
-	url: pageReference,
-	type: "GET",
-	dataType: "html",
-	success: function( response ){
-			 $('#dynamic_content').html(response)
-	},
-	error: function (xhr, status, errorThrown){
-		alert("Page not Found")
-		alert(status + "  Something went wrong")
+ axios.withCredentials = true;
 		
-	}
-     })
-}
-// this function handles all SPA calls
-$(document).ready(function() {
-
-
-	  // This function handles each anchor on the page
-	  $('a').on('click', function(e){
-		$('#dynamic_content').html("")
-		e.preventDefault()
-		var pageRef = $(this).attr('href')
-		var id = $(this).attr('id')
-		history.replaceState(null, '', id)
-        
-		if( pageRef != "/" )
-		{
-			if(pageRef)
-			{
-				var targetRef = "/app/"+ pageRef
-				getPage(targetRef)
-			}
-		}
-		
-    	  });
-
-});
-
+ 
 	
 
 

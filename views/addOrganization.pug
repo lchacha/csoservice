@@ -1,0 +1,28 @@
+extends organizationTemplate
+block activenavs
+    nav.nav
+        a.fa.fa-phone.fa-2x.nav-link.active#organization-link(data-placement="top" title data-original-title="ORGANIZATIONS" style="color: #e2dbdb;" data-toggle="tab" href="#organizations")
+        br
+
+block menus
+    div.main-icon-menu-pane.mm-active.active#organizations
+        div.titlebox
+            h6.menu_title ORGANIZATIONS
+        ul.nav.metismenu.mm-show
+            li.nav-item.indent
+                a.fa.fa-search.nav-link(href="/organizations/search")
+                    | Search
+            li.nav-item.indent
+                a.fa.fa-plus.active.nav-link(href="/organizations/new")
+                    | Add new
+block buttons
+    .form-group
+        .col-12
+            button.btn.btn-primary(type='button') Cancel
+            //button.btn.btn-primary(type='reset' style="float:center") Reset
+            button#saveContact.btn.btn-success.pull-right(type='submit') Save
+    // End of Page content
+    // Custom Theme Scripts
+
+block scripts
+    script(src='/js/addorganization.js')

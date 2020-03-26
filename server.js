@@ -15,11 +15,27 @@ var app = express();
 
 var server = require('http').Server(app);
 
+
+
 require('dotenv').config();
+var uuid = require("uuid/v4")
+var session = require('express-session')
+const FileStore = require('session-file-store')(session)
 
-var bodyParser = require('body-parser')
+//const { body, validationResult } = require ( 'express-validator/check')
 
-var multer = require('multer')
+
+app.use(session({
+  genid: (req) => {
+    console.log('Inside the session middleware')
+    console.log(req.sessionID)
+    return uuid() // use UUIDs for session IDs
+  },
+  store: new FileStore(),
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true
+}))
 
 var axios  = require('axios')
 
@@ -32,9 +48,9 @@ PORT = process.env.PORT || 8000
 //var router = express.Router();
 
 
-//app.set('views', __dirname + '/views/production');
+app.set('views', __dirname + '/views');
 
-//app.set('view engine', 'pug');
+app.set('view engine', 'pug');
 
 // Backend Server address
 //var server = process.env.BKEND_server_url
@@ -42,16 +58,20 @@ PORT = process.env.PORT || 8000
 
 app.use(express.static(path.join(__dirname, './public')));
 
+
 var organization = require('./routes/organization/organization')
 
 
-app.use('/organisations', organization)
+app.use('/organizations', organization)
 
 
+app.get("/", (req, res) => {
+    res.render("layout")
+})
 // error handlers
 
 // development error handler
-// will print stacktrace
+/* will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
         res.status(err.status || 500);
@@ -70,7 +90,7 @@ app.use(function(err, req, res, next) {
         message: err.message,
         error: {}
     });
-});
+});*/
 
 // route to Get all persons from DB
 // Enties in back end

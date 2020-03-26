@@ -1,0 +1,204 @@
+extends layout
+
+block content
+    .row
+        .col-md-12
+            .page-title-box
+                .float-right(stle="padding-left:10px")
+                    
+                h4.page-title
+                    | #{page_title}
+                    
+                
+                
+               
+                form#neworg.form-horizontal.form-label-left.input_mask.needs-validation( enctype='multipart/form-data' )
+                    .form-group
+                    div.text-center
+                        h4.page-title= organization_name
+                            div.shadow-sm.p-4.d-inline-block.rounded-circle( style=" box-shadow: 10px 5px 5px red;")
+                                img(src="/images/flavicon.png" style="width:auto; height:120px; ")
+                            span.fa.fa-edit#changeLogo
+                    hr
+                    div.row
+                        div.col-12#error-bar
+                    .col-md-10.offset-md-1
+                        div.card
+                            div.card-body       
+
+                                div.row
+                                    div.input-group.col-12.has-feedback.form-group
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-institution.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#organization.form-control.has-feedback-left(type='text' min="5"  name='organization' placeholder='Full Name of Organization' required)
+                                            
+                                        div.invalid-feedback 
+                                            | Please provide the full organization name
+
+                                    div.input-group.col-12.has-feedback.form-group
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-institution.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#nature.form-control.has-feedback-left(type='text'  required name='nature' placeholder='Nature of Organzation: NGO, CBO, Self-help Group, Company, Society, Donor')
+                                        div.invalid-feedback 
+                                            | Please provide the organizational mandate
+
+                                    div.input-group.col-12.has-feedback.form-group
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-user-plus.form-control-feedback.left(aria-hidden='true')
+                                                
+                                        input#inputSuccess3.form-control.has-feedback-left(type='text' name='acronym' placeholder='Acronym/Short Name')
+                                    div.invalid-feedback 
+                                            | Please provide the full organization name
+                        div.card
+                            div.card-body
+
+                                div.row
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-user.form-control-feedback.left(aria-hidden='true')
+                                                
+                                        input#username.form-control.has-feedback-left(type='text' disabled  min="6" name='username'  value='test-user' placeholder='Username')
+                                        div.invalid-feedback 
+                                            | Please provide username
+                                    
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-key.form-control-feedback.left(aria-hidden='true')
+                                        button.btn.btn-outline-secondary
+                                            | change Password
+                                br
+                                .col-md-12.col-sm-12.col-xs-12.form-group.has-feedback
+                                    strong Contact Details:
+                        
+                                div.row
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-envelope.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#email.form-control.has-feedback-left(type='email' name ='email'  required placeholder='Organization Email')
+                                        div.invalid-feedback 
+                                            | Please provide a valid email address
+
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text
+                                                i.fa.fa-envelope.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#commdept_email.form-control.has-feedback-left(type='email' name='commdept_email'  required placeholder='Communication Dptmt Email')
+                                        div.invalid-feedback 
+                                            | Please provide a valid email address
+
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-phone.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#phone_number1.form-control.has-feedback-left(type='tel' name='phone_number1' required placeholder='Landline Telephone No.')
+                                        div.invalid-feedback 
+                                            | Please provide a valid phone number 
+
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-mobile.form-control-feedback.left(aria-hidden='true') 
+                                        input#phone_number2.form-control.has-feedback-left(type='tel' name='phone_number2'   placeholder='Mobile Phone Number 1')
+                                        div.invalid-feedback 
+                                            | Please provide the full organization name
+                            
+                                br
+                                .col-md-12.col-sm-12.col-xs-12.form-group.has-feedback
+                                    strong Physical Location Details:
+                      
+                                div.row
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-location-arrow.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#City.form-control.has-feedback-left(type='text' required  name='City' placeholder='Country')
+                                        div.invalid-feedback 
+                                            | Country is required
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-location-arrow.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#street.form-control.has-feedback-left(type='text'   required name='street' placeholder='Street/Road')
+                                        div.invalid-feedback 
+                                            | Street is required
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-location-arrow.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#building.form-control.has-feedback-left(type='text'  required name='building' placeholder='Building')
+                                        div.invalid-feedback 
+                                            | Building is required
+                                
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                    i.fa.fa-location-arrow.form-control-feedback.left(aria-hidden='true') 
+                                        input#inputSuccess12.form-control.has-feedback-left(type='text' name='gps' placeholder='GPS')
+                               
+                                    
+                                br
+                                .col-md-12.col-sm-12.col-xs-12.form-group.has-feedback
+                                    strong Online/Social Media Details:
+                        
+                                div.row
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                span.fa.fa-globe.form-control-feedback.left(aria-hidden='true')
+                                                span.required *
+                                        input#website_url.form-control.has-feedback-left(type='text' name='website_url'  placeholder='Website')
+                                        div.invalid-feedback 
+                                            | Please provide a valid website url
+                                    
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                span.fa.fa-twitter.form-control-feedback.left(aria-hidden='true')
+                                        input#twitter.form-control.has-feedback-left(type='text' name='twitter' placeholder='Twitter')
+                                    
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                span.fa.fa-facebook.form-control-feedback.left(aria-hidden='true')
+                                        input#Facebook.form-control.has-feedback-left(type='text' name='facebook' placeholder='Facebook')
+                                    
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                span.fa.fa-instagram.form-control-feedback.left(aria-hidden='true')
+                                        input#instagram.form-control.has-feedback-left(type='text' name='instagram' placeholder='Instagram')
+                                    
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                    span.fa.fa-flickr.form-control-feedback.left(aria-hidden='true')
+                                        input#flickr.form-control.has-feedback-left(type='text' name='flickr' placeholder='Flickr')
+                                   
+          
+                                    div.input-group.col-md-6.col-sm-6.col-xs-12.form-group.has-feedback
+                                        div.input-group-prepend
+                                            span.input-group-text  
+                                                i.fa.fa-whatsapp.form-control-feedback.left(aria-hidden='true')
+                                        input#pinterest.form-control.has-feedback-left(type='text' name='pinterest' placeholder='Whatsapp')
+                        hr
+                        block buttons
+                        
+    // End of Page content
+    // Custom Theme Scripts
+
+block scripts
+    script(src='/js/addorganization.js')
