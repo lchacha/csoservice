@@ -174,7 +174,7 @@ class organizationController{
 } 
 
 function compileOrganization(org){
-	
+	console.log(org)
 	 contacts = {
 		"phone1": org.phone_number1,
 		"phone2": org.phone_number2
@@ -206,12 +206,12 @@ function compileOrganization(org){
 		"contacts": contacts,
 		"organization_departments":org.organization_departments,
 		"organization_mandate": org.nature,
-		"organisation_acronym": org.acronym,
+		"Organisation_acronym": org.acronym,
 		"social_media": social_media,
 		"address": location
 
 	}
-
+	console.log(params)
 	return params;
 }
 module.exports = organizationController;
