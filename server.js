@@ -60,13 +60,23 @@ app.use(express.static(path.join(__dirname, './public')));
 
 
 var organization = require('./routes/organization/organization')
+var coalitions = require('./routes/coalition/coalition')
 
 
 app.use('/organizations', organization)
+app.use('/coalitions', coalitions)
 
 
 app.get("/", (req, res) => {
     res.render("home")
+})
+
+app.get("/login", (req, res) => {
+    res.render("login")
+})
+
+app.get("/register", (req, res) => {
+    res.render("register")
 })
 // error handlers
 

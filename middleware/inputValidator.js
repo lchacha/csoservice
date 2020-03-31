@@ -57,6 +57,20 @@ const searchSanitizer = () => {
   ]
 }
 
+const coalitionSanitizer = () => {
+  return [
+    // username must be an email
+    check('search')
+        .not().isEmpty().withMessage("Please provide a valid phone number")
+        .bail()
+        .isLength({min:3}).withMessage("Search value has to be at least 3 charater long")
+        .bail()
+        .trim()
+        .escape(),
+    
+  ]
+}
+
 const validate = (req, res, next) => {
   const errors = validationResult(req)
   if (errors.isEmpty()) {
@@ -74,5 +88,7 @@ const validate = (req, res, next) => {
 module.exports = {
   organizationValidationRules,
   validate,
-  searchSanitizer
+  searchSanitizer,
+  coalitionSanitizer
+ 
 }

@@ -1,0 +1,102 @@
+doctype html
+head
+    meta(charset='utf-8')
+    meta(http-equiv='Content-Type' content='text/html; charset=UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+    link(rel='icon' href='/images/favicon.ico' type='image/ico')
+    title #{title}
+    link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous")
+    link(href='/vendors/font-awesome/css/font-awesome.min.css' rel='stylesheet')
+    link(href='"//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"')
+   
+    link(href='/css/style.css' rel='stylesheet')
+    link(href='/css/index.css' rel='stylesheet')
+body
+    .container
+      .row.vh-100
+        .col-12.align-self-center
+          .auth-page
+            .card.auth-card.shadow-lg.col-md-6.offset-md-3(style="border-radius: 30px")
+              .card-body
+                .px-3
+                  .auth-logo-box(style="position: absolute !important;left: 0 !important; right: 0 !important; top: -30px !important; text-align: center !important;")
+                    a.logo.logo-admin(href='#')
+                      img.auth-logo(src='/images/logo.png' height='55' alt='logo')
+                  // end auth-logo-box
+                  .text-center.auth-logo-text
+                    h4.mt-0.mb-3.mt-5 Free Register for CSO SERVICE
+                    p.text-muted.mb-0 Get your free CSO Service account now.
+                  // end auth-logo-text
+                  form.form-horizontal.auth-form.my-4(action='index.html')
+                    .form-group
+                      label(for='username') Username
+                      .input-group.mb-3
+                        span.auth-form-icon
+                          i.dripicons-user
+                        input#username.form-control(type='text' name='username' placeholder='Enter username')
+                    // end form-group
+                    .form-group
+                      label(for='useremail') Email
+                      .input-group.mb-3
+                        span.auth-form-icon
+                          i.dripicons-mail
+                        input#useremail.form-control(type='email' name='useremail' placeholder='Enter Email')
+                    // end form-group
+                    .form-group
+                      label(for='userpassword') Password
+                      .input-group.mb-3
+                        span.auth-form-icon
+                          i.dripicons-lock
+                        input#userpassword.form-control(type='password' name='password' placeholder='Enter password')
+                    // end form-group
+                    .form-group
+                      label(for='conf_password') Confirm Password
+                      .input-group.mb-3
+                        span.auth-form-icon
+                          i.dripicons-lock-open
+                        input#conf_password.form-control(type='password' name='conf-password' placeholder='Enter Confirm Password')
+                      .form-group
+                        label(for='mo_number') Mobile Number
+                        .input-group.mb-3
+                          span.auth-form-icon
+                            i.dripicons-phone
+                          input#mo_number.form-control(type='text' name='mobile-number' placeholder='Enter Mobile Number')
+                      // end form-group
+                    // end form-group
+                    .form-group.row.mt-4
+                      .col-sm-12
+                        .custom-control.custom-switch.switch-success
+                          input#customSwitchSuccess.custom-control-input(type='checkbox')
+                          label.custom-control-label.text-muted(for='customSwitchSuccess')
+                            | By registering you agree to the CSO Service 
+                            a.text-primary(href='#') Terms of Use
+                      // end col
+                    // end form-group
+                    .form-group.mb-0.row
+                      .col-12.mt-2
+                        button.btn.btn-gradient-primary.btn-round.btn-block.waves-effect.waves-light(type='button')
+                          | Register 
+                          i.fas.fa-sign-in-alt.ml-1
+                      // end col
+                    // end form-group
+                  // end form
+                // end /div
+                .m-3.text-center.text-muted
+                  p
+                    | Already have an account ? 
+                    a.text-primary.ml-2(href='../authentication/auth-login.html') Log in
+              // end card-body
+            // end card
+          // end auth-card
+        // end col
+      // end row
+    // end container
+    // End Log In page
+    // jQuery
+script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js')
+script(src='https://code.jquery.com/ui/1.12.1/jquery-ui.js')
+script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js')
+// Bootstrap
+script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+script(src="https://unpkg.com/axios/dist/axios.min.js")

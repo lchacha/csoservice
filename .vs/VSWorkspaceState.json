@@ -2,14 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\controllers",
+    "\\middleware",
     "\\public",
     "\\public\\css",
-    "\\routes",
-    "\\routes\\organization",
+    "\\public\\css\\vendors",
+    "\\public\\js",
+    "\\public\\js\\vendors",
     "\\test",
-    "\\views",
-    "\\views\\production"
+    "\\views"
   ],
-  "SelectedNode": "\\routes\\organization\\organization.js",
+  "SelectedNode": "\\views\\register.pug",
   "PreviewInSolutionExplorer": false
 }

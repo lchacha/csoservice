@@ -1,3 +1,4 @@
+
 (function() {
   'use strict';
   // Saves a Data field
@@ -19,15 +20,19 @@
          
         }else{
             event.preventDefault();
-            console.log(cvb.get('search'))
+            console.log()
+            
+            startP()
             axios.post("/organizations/data/search", cvb)
                 .then( response => {
                     
                      var table = "<table class='table' id='#organizationstable'></table>"
                       
                       $('.dataresults').html(table)
-                    renderTable(response.data)
+                    renderTable(response.data, cvb.get('search'))
+                     
                     // Render the data into a table
+                     success()
                    
 			    })
                 .catch( error =>{
@@ -53,8 +58,9 @@
                                 //$('#error-bar').append("<div class='alert alert-danger' role='alert'>" + errors[err][key] + "</div>");
 					        }
                     }
+                    failure()
                 })
-          
+            
 			
 		}
          //form.classList.add('was-validated');
@@ -80,7 +86,7 @@ function getField (sample){
 	return dt
 }
 
-function renderTable(data){
+function renderTable(data, searchterm){
    
     try{
          
@@ -100,12 +106,13 @@ function renderTable(data){
                  "data": "created_at"}
 		      ],
               "language": {
-                  "emptyTable": "No data found of search term"
+                  "emptyTable": "No organization name wth key '" + searchterm + "'"
                 }
           
             
         } );
         //$('input').classList.add('form-control')
+       
 	}
     catch( error){
         console.log(error)

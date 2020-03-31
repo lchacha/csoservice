@@ -23,3 +23,31 @@
 .indent{
     padding-left:20px;
 }
+.modal-content{
+    background-color: #abd4e2 !important;
+    border: 0;
+    border-radius: 20px !important
+
+}
+.modal-content-failure{
+    background-color: #dcaaa4 !important;
+    border: 0;
+    border-radius: 20px !important
+}
+.fade-custom{
+    transition: opacity .15s linear;
+}
+.account-body .auth-card .auth-logo-box {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: -25px !important;
+    text-align: center !important;
+}
+.btn-gradient-primary {
+    background: linear-gradient(14deg, #3e4665 0%, #692749);
+    color: #fff;
+    -webkit-box-shadow: 0 7px 14px 0 rgba(80,110,228,0.5);
+    box-shadow: 0 7px 14px 0 rgba(80,110,228,0.5);
+    border: none;
+}

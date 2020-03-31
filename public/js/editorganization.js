@@ -23,10 +23,13 @@
             
             $('#error-bar').html("")
             var id = $(".page-title").data("id")
+            startP()
 			axios.put("/organizations/"+ id, cvb)
                 .then( response => {
-                    alert(response.data.message)
+                    alert("IN edit", response.data.message)
+                    stopP()
 			    })
+                
                 .catch( error =>{
                     
                     // get all inputs
@@ -56,7 +59,7 @@
                         $('#error-bar').append("<div class='alert alert-danger' role='alert'>" + error + "</div>");
 					}
 					
-                    
+                    stopP()
                
 			    })
 			

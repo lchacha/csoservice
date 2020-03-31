@@ -22,14 +22,17 @@
             //$('#organization')
             
             $('#error-bar').html("")
+            startP()
 			axios.post("/organizations", cvb)
                 .then( response => {
                     alert(response.data.message)
+                    success()
 			    })
                 .catch( error =>{
                     
                     // get all inputs
                     //var inputs =  var element = document.getElementsByClassName('form-control');
+                    stopP()
                     $('input').removeClass('is-invalid')
                     let errors = error.response.data.errors
                     for ( var err in errors){

@@ -7,7 +7,7 @@ block activenavs
     nav.nav
         a.nav-link#organization-link.active(data-placement="right"  data-original-title="ORGANIZATIONS" title data-toggle="tooltip-custom" href="#organizations")
             span.fa.fa-phone.fa-2x.feather.feather-package.align-self-center.menu-icon.icon-dual(height="24px" width="24px")
-        a.nav-link#organization-link(data-placement="right"  data-original-title="PEOPLE" title data-toggle="tooltip-custom" href="#organizations")
+        a.nav-link#persons-link(data-placement="right"  data-original-title="PEOPLE" title data-toggle="tooltip-custom" href="#organizations")
             span.fa.fa-user.fa-2x.feather.feather-package.align-self-center.menu-icon.icon-dual(height="24px" width="24px")
 
 block menus
@@ -70,6 +70,8 @@ block content
 block scripts
     script(src='/js/organizations.js')
     script(src=' https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js')
+    script(src='/js/vendors/nprogress.js')
+    script(src="/js/main.js")
     //script(src='  https://cdn.datatables.net/buttons/1.6.1/js/dataTables.buttons.min.js')
     //script(src=' https://cdn.datatables.net/buttons/1.6.1/js/buttons.flash.min.js')
     //script(src=' https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js')
