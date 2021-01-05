@@ -4,7 +4,7 @@
   "description": "Being a CSo made easier",
   "main": "index.js",
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "body-parser": "^1.18.3",
     "chart.js": "^2.5.0",
     "connect-ensure-login": "^0.1.1",
