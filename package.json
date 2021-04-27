@@ -28,7 +28,7 @@
     "pug": "2.0.0-beta11",
     "qs": "^6.5.2",
     "raw-body": "^2.3.3",
-    "redis": "^2.6.5",
+    "redis": "^3.1.1",
     "serve-spa": "1.1.1",
     "session-file-store": "^1.4.0",
     "socket.io": "^2.1.1",
